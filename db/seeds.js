@@ -16,6 +16,33 @@ db.on("error", err => {
   console.log(err);
 });
 
+// set up the equipment
+const jazzSet = new Equipment({
+  cymbals: [
+    '20" Zildjian sizzle ride, 15" Zildjian sizzle crash, 13" Zildjian Avedis hi-hats'
+  ],
+  drums: [
+    '18" Gretsch Catalina kick drum, 14" Gretsch Catalina floor tom, 13" Gretsch Brooklyn steel snare'
+  ],
+  hardware: [
+    "Hi-hat stand, Straight cymbal stand, Boom cymbal stand, Belt-driven kick pedal, Rock 'n' Sock throne"
+  ],
+  other: [
+    "Vic Firth 7A sticks, Stick bag, Drum bags, Flight case, Bottle of vodka"
+  ]
+});
+
+const rockSet = new Equipment({
+  cymbals: [
+    '22" Zildjian K ride, 18" Zildjian K crash, 16" Zildjian K crash, 14" Zildjian Quick-Beat hi-hats, 10" Zildjian K splash'
+  ],
+  drums: [ ''],
+  hardware: [],
+  other: []
+});
+
+// set up the gigs
+
 // set up the drummers (users)
 const murph = new Drummer({
   image:
@@ -25,7 +52,8 @@ const murph = new Drummer({
   age: 25,
   location: "Atlanta",
   instruments: ["Drums, Bongos, Triangle"],
-  styles: ["Electronic, Rock, Pop, Serbian Folk"]
+  styles: ["Electronic, Rock, Pop, Serbian Folk"],
+  gigs: []
 });
 
 const cameron = new Drummer({
@@ -38,7 +66,3 @@ const cameron = new Drummer({
   instruments: ["Drums, Percussion, Washboard"],
   styles: ["Hardcore, Screamo, Death Metal, Easy Listening"]
 });
-
-// set up the equipment
-
-// set up the gigs
