@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "** Drummers' Checklist",
   "main": "index.js",
+  "engines": {
+   "node": "9.7.0"
+ },
   "scripts": {
     "start": "node server.js",
     "dev": "concurrently \"node server.js\" \"cd client && npm start\"",

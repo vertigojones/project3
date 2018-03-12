@@ -42,8 +42,8 @@ app.get("/", (req, res) => {
 });
 
 // set up port
-const PORT = process.env.PORT || 3001;
+//const PORT = process.env.PORT || 3001;
 
-app.listen(PORT, () => {
-  console.log("Laying down beats on PORT 3001");
-});
+// app.listen(PORT, () => {
+//   console.log("Laying down beats on PORT 3001");
+// });
