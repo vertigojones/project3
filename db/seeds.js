@@ -2,7 +2,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 
 // import models
-const Drummer = require("../models/drummer");
+const Drummer = require("../models/drummers");
 const Equipment = require("../models/equipment");
 const Gigs = require("../models/gigs");
 
@@ -136,14 +136,15 @@ const fourSeasons = new Gigs({
 });
 
 const fortyWatt = new Gigs({
-    image: "https://img.wennermedia.com/920-width/rs-138811-20130335-40watt-x306-1364239065.jpg",
-    date: "04-03-2018",
-    time: "10:00",
-    venue: "40 Watt Club",
-    location: "Athens, GA",
-    artist: "Caribbean Steel",
-    equipment: [bongos]
-})
+  image:
+    "https://img.wennermedia.com/920-width/rs-138811-20130335-40watt-x306-1364239065.jpg",
+  date: "04-03-2018",
+  time: "10:00",
+  venue: "40 Watt Club",
+  location: "Athens, GA",
+  artist: "Caribbean Steel",
+  equipment: [bongos]
+});
 
 // set up the drummers (users)
 const murph = new Drummer({
@@ -155,7 +156,7 @@ const murph = new Drummer({
   location: "Atlanta",
   instruments: ["Drums, Bongos, Triangle"],
   styles: ["Electronic, Rock, Pop, Serbian Folk"],
-  gigs: []
+  gigs: [ eddiesAttic, tabernacle, symphony]
 });
 
 const cameron = new Drummer({
@@ -166,5 +167,30 @@ const cameron = new Drummer({
   age: 25,
   location: "The Village",
   instruments: ["Drums, Percussion, Washboard"],
-  styles: ["Hardcore, Screamo, Death Metal, Easy Listening"]
+  styles: ["Hardcore, Screamo, Latin, Easy Listening"],
+  gigs: [ mbs, fourSeasons, fortyWatt]
 });
+
+// remove all Equipment
+Equipment.remove()
+  .then(() => {
+    // then remove all Gigs
+    Gigs.remove();
+  })
+  .then(() => {
+    // then remove all Drummers and save to DB
+    return Drummer.remove();
+  })
+  .then(() => {
+    return Drummer.insertMany([murph, cameron]);
+  })
+  .then(() => {
+    // close the database
+    console.log("Keep the beats alive!");
+    db.close();
+  })
+  .catch(err => {
+    // if there are any errors, log it and then close the db
+    console.log(err);
+    db.close();
+  });

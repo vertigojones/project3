@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const gigSchema = require('./gigSchema')
-const equipmenSchema = require('./equipmentSchema')
+const equipmentSchema = require('./equipmentSchema')
 mongoose.Promise = global.Promise
 
 const gigSchema = new Schema ({

@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const drummerSchema = require("./drummerSchema");
 const gigSchema = require("./gigSchema")
 
 mongoose.Promise = global.Promise;
