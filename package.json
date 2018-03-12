@@ -1,0 +1,25 @@
+{
+  "name": "project_three",
+  "version": "1.0.0",
+  "description": "** Drummers' Checklist",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"node server.js\" \"cd client && npm start\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cd client && npm i && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "concurrently": "^3.5.1",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.9",
+    "morgan": "^1.9.0",
+    "update": "^0.7.4",
+    "npm": "^5.7.1"
+  }
+}
