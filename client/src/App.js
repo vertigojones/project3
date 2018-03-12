@@ -9,6 +9,7 @@ class App extends Component {
       <Router>
         <div>
           <Switch>
+          <h1>Hit that beat!</h1>
             <Route exact path="/" component={Drummers}/>
             {/* <Route path="/:id" component={SingleCreature}/> */}
           </Switch>
