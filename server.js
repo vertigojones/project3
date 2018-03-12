@@ -11,7 +11,6 @@ const drummerController = require('./controllers/drummerController')
 //const equipmentController = require('./controllers/equipmentController')
 
 // connect to mongoose
-mongoose.Promise = global.Promise
 mongoose.connect(process.env.MONGODB_URI);
 
 const db = mongoose.connection;
