@@ -6,15 +6,17 @@ import Drummers from './components/Drummers'
 class App extends Component {
   render () {
     return (
+      <div>
+      <h1>Hit that beat!</h1>
+
       <Router>
-        <div>
+        
           <Switch>
-          <h1>Hit that beat!</h1>
             <Route exact path="/" component={Drummers}/>
-            {/* <Route path="/:id" component={SingleCreature}/> */}
           </Switch>
-        </div>
+        
       </Router>
+      </div>
     )
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-//import NewCreatureForm from "./NewCreatureForm";
+import NewDrummerForm from "./NewDrummerForm";
 
 class Drummers extends Component {
   state = {
@@ -23,7 +23,7 @@ class Drummers extends Component {
   render() {
     return (
       <div>
-        <h1>Welcome to The Beatmakers</h1>
+        <h2>Welcome to The Beatmakers</h2>
         {this.state.drummers.map(drummer => (
           <Link key={drummer._id} to={`/${drummer._id}`}>
             <h3>Name: {drummer.name}</h3>
@@ -31,9 +31,9 @@ class Drummers extends Component {
         ))}
         <button onClick={this.toggleShowNewForm}>Create New Drummer</button>
 
-        {/* {this.state.showNewForm ? (
+        {this.state.showNewForm ? (
           <NewDrummerForm getAllDrummers={this.getAllDrummers} />
-        ) : null} */}
+        ) : null}
       </div>
     );
   }
