@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const drummerSchema = require("./drummerSchema");
+const gigSchema = require("./gigSchema")
+
 mongoose.Promise = global.Promise;
 
 const drummerSchema = new Schema({
@@ -10,7 +12,8 @@ const drummerSchema = new Schema({
   age: Number,
   location: String,
   instruments: [],
-  styles: []
+  styles: [],
+  gigs: [ gigSchema ]
 });
 
 module.exports = drummerSchema;
