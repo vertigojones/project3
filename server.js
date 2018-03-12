@@ -6,8 +6,12 @@ const mongoose = require("mongoose");
 const logger = require("morgan");
 
 const app = express();
+const drummerController = require('./controllers/drummerController')
+//const gigsController = require('./controllers/gigsController')
+//const equipmentController = require('./controllers/equipmentController')
 
 // connect to mongoose
+mongoose.Promise = global.Promise
 mongoose.connect(process.env.MONGODB_URI);
 
 const db = mongoose.connection;
@@ -21,18 +25,21 @@ db.on("open", () => {
 
 // middleware
 app.use(logger("dev"));
-app.use(bodyParser.json());
+
 app.use(express.static(`${__dirname}/client/build`));
+app.use(bodyParser.json());
 
 // set up routes
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
-//const creatureController = require("./controllers/creatureController");
-//app.use("/api/creatures", creatureController);
 
-app.get("/*", (req, res) => {
-  res.sendFile(`${__dirname}/client/build/index.html`);
+app.use('/api/drummer', drummerController)
+//app.use('/api/drummer/:userId/gigs', gigsController)
+//app.use('/api/drummer/:userId/:gigId/equipment', equipmentController)
+
+app.get("/", (req, res) => {
+    res.sendFile(`${__dirname}/client/build/index.html`);
 });
 
 // set up port

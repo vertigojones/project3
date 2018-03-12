@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const gigSchema = require("./gigSchema")
+const gigSchema = require("./gigSchema");
 
 mongoose.Promise = global.Promise;
 
@@ -12,7 +12,7 @@ const drummerSchema = new Schema({
   location: String,
   instruments: [],
   styles: [],
-  gigs: [ gigSchema ]
+  gigs: [gigSchema]
 });
 
 module.exports = drummerSchema;
