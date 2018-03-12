@@ -6,9 +6,11 @@ mongoose.Promise = global.Promise
 
 const gigSchema = new Schema ({
     image: String,
-    date: Number,
-    time: Number,
+    date: String,
+    time: String,
     venue: String,
+    location: String,
+    artist: String,
     equipment: [ equipmentSchema ]
 })
 
