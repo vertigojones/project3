@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-const Drummers = require("../models/Drummers");
+const Drummers = require("../models/drummers");
 
+// index
 router.get("/", async (req, res) => {
   try {
     const drummers = await Drummers.find({});

@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Drummers from "./components/Drummers";
-import SingleDrummer from "./components/SingleDrummer";
-import NewDrummerForm from "./components/NewDrummerForm";
-import UpdateDrummer from "./components/UpdateDrummer";
+import Drummers from "./components/drummers/Drummers";
+import SingleDrummer from "./components/drummers/SingleDrummer";
+import Gigs from "./components/gigs/Gigs";
 
 class App extends Component {
   render() {
@@ -16,8 +15,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Drummers} />
             <Route exact path="/:id" component={SingleDrummer} />
-            {/* <Route exact path="/:id" component={UpdateDrummer} /> */}
-            {/* <Route exact path="/:id" component={DeleteDrummer} /> */}
+            <Route exact path="/gigs" component={Gigs} />
           </Switch>
         </Router>
       </div>

@@ -7,7 +7,7 @@ const logger = require("morgan");
 
 const app = express();
 const drummerController = require('./controllers/drummerController')
-//const gigsController = require('./controllers/gigsController')
+const gigsController = require('./controllers/gigsController')
 //const equipmentController = require('./controllers/equipmentController')
 
 // connect to mongoose
@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/api/drummer', drummerController)
-//app.use('/api/drummer/:userId/gigs', gigsController)
+app.use('/api/drummer', gigsController)
 //app.use('/api/drummer/:userId/:gigId/equipment', equipmentController)
 
 app.get("/", (req, res) => {
@@ -42,8 +42,8 @@ app.get("/", (req, res) => {
 });
 
 // set up port
-//const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
 
-// app.listen(PORT, () => {
-//   console.log("Laying down beats on PORT 3001");
-// });
+app.listen(PORT, () => {
+  console.log("Laying down beats on PORT 3001");
+});
