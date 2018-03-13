@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import Drummers from "./components/Drummers";
 import SingleDrummer from "./components/SingleDrummer";
 import NewDrummerForm from "./components/NewDrummerForm";
@@ -16,6 +17,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Drummers} />
             <Route exact path="/:id" component={SingleDrummer} />
+            <Route exact path="/:id/update" component={UpdateDrummer} />
+            <Route exact path="/:id" component={DeleteDrummer} />
           </Switch>
         </Router>
       </div>

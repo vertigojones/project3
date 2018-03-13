@@ -1,6 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import styled from "styled-components";
+
+const ProfileStyles = styled.div``;
+
+const ImageStyles = styled.div`
+  img {
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 15px;
+  }
+`;
 
 class SingleDrummer extends Component {
   state = {
@@ -18,18 +29,23 @@ class SingleDrummer extends Component {
 
   render() {
     return (
-      <div>
-        <Link to="/">All Drummers</Link>
-        <h1>Laying down these beats is {this.state.drummer.name}</h1>
-        <div className="image-container">
-        {this.state.drummer.image}
+      <ProfileStyles>
+        <div>
+          <Link to="/">All Drummers</Link>
+          <div className="profile-container">
+            <h2>{this.state.drummer.name}</h2>
+            <ImageStyles>
+              <img src={this.state.drummer.image} alt="Drummer Profile" />
+            </ImageStyles>
+            <h4>Gender: {this.state.drummer.gender}</h4>
+            <h4>Age: {this.state.drummer.age}</h4>
+            <h4>Location: {this.state.drummer.location}</h4>
+            <h4>Instruments: {this.state.drummer.instruments}</h4>
+            <h4>Styles: {this.state.drummer.styles}</h4>
+          </div>
+          <Link to="/:id/update">Update {this.state.drummer.name}</Link>
         </div>
-        <h3>Gender: {this.state.drummer.gender}</h3>
-        <h3>Age: {this.state.drummer.age}</h3>
-        <h3>Location: {this.state.drummer.location}</h3>
-        <h3>Instruments: {this.state.drummer.instruments}</h3>
-        <h3>Styles: {this.state.drummer.styles}</h3>
-      </div>
+      </ProfileStyles>
     );
   }
 }
