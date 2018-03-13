@@ -17,7 +17,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Drummers} />
             <Route exact path="/:id" component={SingleDrummer} />
-            <Route exact path="/:id/update" component={UpdateDrummer} />
+            <Route exact path="/:id" component={UpdateDrummer} />
             <Route exact path="/:id" component={DeleteDrummer} />
           </Switch>
         </Router>

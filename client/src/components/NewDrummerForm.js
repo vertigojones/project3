@@ -38,7 +38,7 @@ class NewDrummerForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <div>
-          <label htmlFor="name">Image URL: </label>
+          <label htmlFor="image">Image URL: </label>
           <input
             onChange={this.handleChange}
             type="text"
@@ -47,7 +47,7 @@ class NewDrummerForm extends Component {
           />
         </div>
         <div>
-          <label htmlFor="description">Name: </label>
+          <label htmlFor="name">Name: </label>
           <input
             onChange={this.handleChange}
             type="text"
@@ -56,7 +56,7 @@ class NewDrummerForm extends Component {
           />
         </div>
         <div>
-          <label htmlFor="description">Gender: </label>
+          <label htmlFor="gender">Gender: </label>
           <input
             onChange={this.handleChange}
             type="text"
@@ -65,7 +65,7 @@ class NewDrummerForm extends Component {
           />
         </div>
         <div>
-          <label htmlFor="description">Age: </label>
+          <label htmlFor="age">Age: </label>
           <input
             onChange={this.handleChange}
             type="text"
@@ -74,7 +74,7 @@ class NewDrummerForm extends Component {
           />
         </div>
         <div>
-          <label htmlFor="description">Location: </label>
+          <label htmlFor="location">Location: </label>
           <input
             onChange={this.handleChange}
             type="text"
@@ -83,7 +83,7 @@ class NewDrummerForm extends Component {
           />
         </div>
         <div>
-          <label htmlFor="description">Instruments: </label>
+          <label htmlFor="instruments">Instruments: </label>
           <input
             onChange={this.handleChange}
             type="text"
@@ -92,7 +92,7 @@ class NewDrummerForm extends Component {
           />
         </div>
         <div>
-          <label htmlFor="description">Styles: </label>
+          <label htmlFor="styles">Styles: </label>
           <input
             onChange={this.handleChange}
             type="text"

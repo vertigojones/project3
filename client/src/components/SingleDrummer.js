@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
+import UpdateDrummer from "./UpdateDrummer";
 
 const ProfileStyles = styled.div``;
 
@@ -17,6 +18,10 @@ class SingleDrummer extends Component {
   state = {
     drummer: {},
     gigs: []
+  };
+
+  toggleUpdateDrummer = () => {
+    this.setState({ updateDrummer: !this.state.updateDrummer });
   };
 
   async componentWillMount() {
@@ -43,8 +48,9 @@ class SingleDrummer extends Component {
             <h4>Instruments: {this.state.drummer.instruments}</h4>
             <h4>Styles: {this.state.drummer.styles}</h4>
           </div>
-          <Link to="/:id/update">Update {this.state.drummer.name}</Link>
+          <Link to="/:id">Update {this.state.drummer.name}</Link>
         </div>
+        <UpdateDrummer drummer={this.state.drummer} />
       </ProfileStyles>
     );
   }
