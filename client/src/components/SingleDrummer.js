@@ -17,10 +17,11 @@ const ImageStyles = styled.div`
 class SingleDrummer extends Component {
   state = {
     drummer: {},
-    gigs: []
+    gigs: [],
+    updateDrummer: false
   };
 
-  toggleUpdateDrummer = () => {
+  toggleShowUpdate = () => {
     this.setState({ updateDrummer: !this.state.updateDrummer });
   };
 
@@ -48,9 +49,13 @@ class SingleDrummer extends Component {
             <h4>Instruments: {this.state.drummer.instruments}</h4>
             <h4>Styles: {this.state.drummer.styles}</h4>
           </div>
-          <Link to="/:id">Update {this.state.drummer.name}</Link>
+          <button onClick={this.toggleShowUpdate}>
+            Update {this.state.drummer.name}
+          </button>
         </div>
-        <UpdateDrummer drummer={this.state.drummer} />
+        {this.state.updateDrummer ? (
+          <UpdateDrummer drummer={this.state.drummer} />
+        ) : null}
       </ProfileStyles>
     );
   }

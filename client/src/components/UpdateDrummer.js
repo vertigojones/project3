@@ -47,6 +47,7 @@ class UpdateDrummer extends Component {
               type="text"
               name="image"
               value={this.state.drummer.image}
+              placeholder={this.state.drummer.image}
             />
           </div>
           <div>
