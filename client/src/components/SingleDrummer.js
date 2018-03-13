@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { Redirect } from "react-router";
 import axios from "axios";
 import styled from "styled-components";
 import UpdateDrummer from "./UpdateDrummer";
@@ -18,7 +19,8 @@ class SingleDrummer extends Component {
   state = {
     drummer: {},
     gigs: [],
-    updateDrummer: false
+    updateDrummer: false,
+    redirect: false
   };
 
   toggleShowUpdate = () => {
@@ -33,13 +35,31 @@ class SingleDrummer extends Component {
     console.log(this.state.drummer);
   }
 
+  remove = () => {
+    const drummerId = this.props.match.params.id;
+    this.setState({ redirect: true });
+    axios
+      .delete(`/api/drummer/${drummerId}`)
+      .then(res => {})
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
   render() {
+    if (this.state.redirect === true) {
+      return <Redirect to="/" />;
+    }
+
     return (
       <ProfileStyles>
         <div>
           <Link to="/">All Drummers</Link>
           <div className="profile-container">
             <h2>{this.state.drummer.name}</h2>
+            <button onClick={this.remove}>
+              Remove {this.state.drummer.name}
+            </button>
             <ImageStyles>
               <img src={this.state.drummer.image} alt="Drummer Profile" />
             </ImageStyles>

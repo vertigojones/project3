@@ -5,7 +5,6 @@ import Drummers from "./components/Drummers";
 import SingleDrummer from "./components/SingleDrummer";
 import NewDrummerForm from "./components/NewDrummerForm";
 import UpdateDrummer from "./components/UpdateDrummer";
-import DeleteDrummer from "./components/DeleteDrummer";
 
 class App extends Component {
   render() {
@@ -17,8 +16,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Drummers} />
             <Route exact path="/:id" component={SingleDrummer} />
-            <Route exact path="/:id" component={UpdateDrummer} />
-            <Route exact path="/:id" component={DeleteDrummer} />
+            {/* <Route exact path="/:id" component={UpdateDrummer} /> */}
+            {/* <Route exact path="/:id" component={DeleteDrummer} /> */}
           </Switch>
         </Router>
       </div>

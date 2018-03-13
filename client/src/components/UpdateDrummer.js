@@ -3,33 +3,30 @@ import axios from "axios";
 
 class UpdateDrummer extends Component {
   state = {
-    drummer: {}
+    drummer: {},
+    updatedDrummer: {}
   };
 
   handleChange = event => {
     const drummer = { ...this.state.drummer };
     drummer[event.target.name] = event.target.value;
-    console.log(event.target.value);
-    console.log(event.target.name);
     this.setState({ drummer });
   };
 
   componentDidMount() {
     const drummer = this.props;
     this.setState({ drummer: drummer });
-    console.log(this.props);
   }
 
   editDrummer = event => {
     event.preventDefault();
     const drummerId = this.props.drummer._id;
-    console.log(drummerId);
     const payload = this.state.drummer;
-    console.log(payload);
     axios
       .put(`/api/drummer/${drummerId}`, payload)
       .then(res => {
-        console.log("Success!");
+          this.setState({ drummer: res.data })
+        console.log("Beats away!", res.data);
       })
       .catch(err => {
         console.log(err);
@@ -47,7 +44,7 @@ class UpdateDrummer extends Component {
               type="text"
               name="image"
               value={this.state.drummer.image}
-              placeholder={this.state.drummer.image}
+              placeholder={this.props.drummer.image}
             />
           </div>
           <div>
@@ -57,6 +54,7 @@ class UpdateDrummer extends Component {
               type="text"
               name="name"
               value={this.state.drummer.name}
+              placeholder={this.props.drummer.name}
             />
           </div>
           <div>
@@ -66,6 +64,7 @@ class UpdateDrummer extends Component {
               type="text"
               name="gender"
               value={this.state.drummer.gender}
+              placeholder={this.props.drummer.gender}
             />
           </div>
           <div>
@@ -75,6 +74,7 @@ class UpdateDrummer extends Component {
               type="text"
               name="age"
               value={this.state.drummer.age}
+              placeholder={this.props.drummer.age}
             />
           </div>
           <div>
@@ -84,6 +84,7 @@ class UpdateDrummer extends Component {
               type="text"
               name="location"
               value={this.state.drummer.location}
+              placeholder={this.props.drummer.location}
             />
           </div>
           <div>
@@ -93,6 +94,7 @@ class UpdateDrummer extends Component {
               type="text"
               name="instruments"
               value={this.state.drummer.instruments}
+              placeholder={this.props.drummer.instruments}
             />
           </div>
           <div>
@@ -102,6 +104,7 @@ class UpdateDrummer extends Component {
               type="text"
               name="styles"
               value={this.state.drummer.styles}
+              placeholder={this.props.drummer.styles}
             />
           </div>
           <div>
