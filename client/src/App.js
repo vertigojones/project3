@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Drummers from "./components/Drummers";
 import SingleDrummer from "./components/SingleDrummer";
+import NewDrummerForm from "./components/NewDrummerForm";
+import UpdateDrummer from "./components/UpdateDrummer";
+import DeleteDrummer from "./components/DeleteDrummer";
 
 class App extends Component {
   render() {
