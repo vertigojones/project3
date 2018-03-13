@@ -32,7 +32,7 @@ class NewDrummerForm extends Component {
       gigs: this.state.gigs
     };
     await axios.post("/api/drummer", payload);
-    await this.props.getAllCreatures();
+    await this.props.getAllDrummers();
   };
   render() {
     return (

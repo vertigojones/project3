@@ -1,24 +1,23 @@
-import React, { Component } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Drummers from './components/Drummers'
-//import SingleCreature from './components/SingleCreature'
+import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Drummers from "./components/Drummers";
+import SingleDrummer from "./components/SingleDrummer";
 
 class App extends Component {
-  render () {
+  render() {
     return (
       <div>
-      <h1>Hit that beat!</h1>
+        <h1>Hit that beat!</h1>
 
-      <Router>
-        
+        <Router>
           <Switch>
-            <Route exact path="/" component={Drummers}/>
+            <Route exact path="/" component={Drummers} />
+            <Route exact path="/:id" component={SingleDrummer} />
           </Switch>
-        
-      </Router>
+        </Router>
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
