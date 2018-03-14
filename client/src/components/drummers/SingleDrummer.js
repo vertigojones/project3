@@ -10,14 +10,27 @@ import Header from "../styled-components/Header";
 import Footer from "../styled-components/Footer";
 
 const ProfileStyles = styled.div`
-  height: 60vw;
+  height: 75vw;
   width: 34%;
+  flex: 1;
   order: 1;
   text-align: center;
+
   button {
-    padding: 3px;
-    margin: 3px; 
+    padding: 5px;
+    margin: 10px 0px;
+    border-radius: 5px;
     cursor: pointer;
+  }
+
+  h2 {
+    font-family: "Swanky and Moo Moo", cursive;
+    font-size: 38px;
+    font-weight: bold;
+  }
+
+  h4 {
+    font-family: "Cousine", monospace;
   }
 `;
 
@@ -30,6 +43,13 @@ const ImageStyles = styled.div`
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
       0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
+`;
+
+const GigStyles = styled.div`
+  width: 33%;
+  flex: 1;
+  order: 2;
+  text-align: center;
 `;
 
 class SingleDrummer extends Component {
@@ -45,13 +65,16 @@ class SingleDrummer extends Component {
   };
 
   async componentWillMount() {
+    this.getSingleDrummer();
+  }
+
+  getSingleDrummer = async () => {
     const drummerId = this.props.match.params.id;
     const res = await axios.get(`/api/drummer/${drummerId}`);
     const drummer = res.data;
     this.setState({ drummer });
     console.log(this.state.drummer);
-  }
-
+  };
   remove = () => {
     const drummerId = this.props.match.params.id;
     this.setState({ redirect: true });
@@ -69,33 +92,40 @@ class SingleDrummer extends Component {
     }
 
     return (
-      <div>
+      <div className="page-wrapper">
         <Header />
-        <ProfileStyles>
-          <div>
-            <div className="profile-container">
-              <h2>{this.state.drummer.name}</h2>
-              <button onClick={this.remove}>
-                Remove {this.state.drummer.name}
-              </button>
-              <ImageStyles>
-                <img src={this.state.drummer.image} alt="Drummer Profile" />
-              </ImageStyles>
-              <h4>Gender: {this.state.drummer.gender}</h4>
-              <h4>Age: {this.state.drummer.age}</h4>
-              <h4>Location: {this.state.drummer.location}</h4>
-              <h4>Instruments: {this.state.drummer.instruments}</h4>
-              <h4>Styles: {this.state.drummer.styles}</h4>
-              {/* <h4>Gigs: {[this.state.drummer.gigs]}</h4> */}
-              <button onClick={this.toggleShowUpdate}>
-                Update {this.state.drummer.name}
-              </button>
-              {this.state.updateDrummer ? (
-                <UpdateDrummer drummer={this.state.drummer} />
-              ) : null}
-            </div>
+        <div className="content-wrapper">
+          <div className="profile-wrapper">
+            <ProfileStyles>
+              <div className="profile-container">
+                <h2>{this.state.drummer.name}</h2>
+                <button onClick={this.remove}>
+                  Remove {this.state.drummer.name}
+                </button>
+                <ImageStyles>
+                  <img src={this.state.drummer.image} alt="Drummer Profile" />
+                </ImageStyles>
+                <h4>Gender: {this.state.drummer.gender}</h4>
+                <h4>Age: {this.state.drummer.age}</h4>
+                <h4>Location: {this.state.drummer.location}</h4>
+                <h4>Instruments: {this.state.drummer.instruments}</h4>
+                <h4>Styles: {this.state.drummer.styles}</h4>
+                <button onClick={this.toggleShowUpdate}>
+                  Update {this.state.drummer.name}
+                </button>
+                {this.state.updateDrummer ? (
+                  <UpdateDrummer drummer={this.state.drummer} />
+                ) : null}
+              </div>
+            </ProfileStyles>
           </div>
-        </ProfileStyles>
+
+          <div className="gig-wrapper">
+            <GigStyles>
+              <h2>Gigs</h2>
+            </GigStyles>
+          </div>
+        </div>
         <Footer />
       </div>
     );
