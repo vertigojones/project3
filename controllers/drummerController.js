@@ -44,7 +44,8 @@ router.put("/:id", async (req, res) => {
     const updatedDrummer = req.body;
     const savedDrummer = await Drummers.findByIdAndUpdate(
       drummerId,
-      updatedDrummer
+      updatedDrummer,
+      {new: true}
     );
     res.json(savedDrummer);
   } catch (err) {

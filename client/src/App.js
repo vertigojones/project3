@@ -9,8 +9,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Hit that beat!</h1>
-
         <Router>
           <Switch>
             <Route exact path="/" component={Drummers} />
