@@ -3,16 +3,20 @@ const router = express.Router({ mergeParams: true })
 const Drummers = require('../models/drummers')
 const Gigs = require('../models/gigs')
 
-// index
+// show
 router.get('/:id', (req, res) => {
-    // find drummer by id
+
+    // find drummer from userId route param
     Drummers.findById(req.params.id).then((drummer) => {
-        console.log(drummer)
-        // pass all gigs and drummers
-        const gigs = drummer.gigs
-        res.send( {
-            drummer: drummer,
-            gigs: gigs
+
+        // Use the .id method to extract a single meat from attendee.meats
+        const gig = drummer.gig.id(req.params.id)
+
+        // connect it to a gig/show view
+        res.render('/:id', {
+            id: req.params.id,
+            gig: gig,
+            drummer: drummer
         })
     })
 })

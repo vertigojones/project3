@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import React, { Component } from "react";
+import styled from "styled-components";
 
 const FooterStyles = styled.div`
   width: 100%;
@@ -8,16 +7,16 @@ const FooterStyles = styled.div`
   background: black;
   color: white;
   text-align: center;
-`
+`;
 
 class Footer extends Component {
-  render () {
+  render() {
     return (
       <FooterStyles>
         <h4>©2018 by Owen Liversidge @ General Assembly</h4>
       </FooterStyles>
-    )
+    );
   }
 }
 
-export default Footer
+export default Footer;

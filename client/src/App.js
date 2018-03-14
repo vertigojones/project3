@@ -4,7 +4,6 @@ import { injectGlobal } from "styled-components";
 
 import Drummers from "./components/drummers/Drummers";
 import SingleDrummer from "./components/drummers/SingleDrummer";
-import Gigs from "./components/gigs/Gigs";
 
 injectGlobal`
 @import url('https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display');

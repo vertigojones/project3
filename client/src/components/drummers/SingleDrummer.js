@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
 import axios from "axios";
 import styled from "styled-components";
 
 import UpdateDrummer from "./UpdateDrummer";
-import Gigs from "../gigs/Gigs";
+import GigList from "../gigs/GigList";
 import Header from "../styled-components/Header";
 import Footer from "../styled-components/Footer";
 
@@ -84,7 +83,7 @@ const EquipmentStyles = styled.div`
 class SingleDrummer extends Component {
   state = {
     drummer: {},
-    gigs: [],
+    gigList: [],
     updateDrummer: false,
     redirect: false
   };
@@ -102,7 +101,6 @@ class SingleDrummer extends Component {
     const res = await axios.get(`/api/drummer/${drummerId}`);
     const drummer = res.data;
     this.setState({ drummer });
-    console.log(this.state.drummer);
   };
   remove = () => {
     const drummerId = this.props.match.params.id;
@@ -151,6 +149,8 @@ class SingleDrummer extends Component {
           <GigStyles>
             <div className="gig-wrapper">
               <h2>Gigs</h2>
+              <GigList gigList={this.state.gigList}/>
+              
             </div>
           </GigStyles>
           <EquipmentStyles>
