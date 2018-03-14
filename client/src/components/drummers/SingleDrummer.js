@@ -9,13 +9,19 @@ import Gigs from "../gigs/Gigs";
 import Header from "../styled-components/Header";
 import Footer from "../styled-components/Footer";
 
-const ProfileStyles = styled.div`
-  height: 75vw;
-  width: 34%;
-  flex: 1;
-  order: 1;
-  text-align: center;
+const PageWrapper = styled.div`
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
 
+const ContentWrapper = styled.div`
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-around;
+  
   button {
     padding: 5px;
     margin: 10px 0px;
@@ -34,6 +40,16 @@ const ProfileStyles = styled.div`
   }
 `;
 
+const ProfileStyles = styled.div`
+  flex-basis: 100px;
+  height: 100vw;
+  width: 34%;
+  flex: 1;
+  order: 1;
+  text-align: center;
+  margin: 5px;
+`;
+
 const ImageStyles = styled.div`
   img {
     height: 250px;
@@ -46,10 +62,23 @@ const ImageStyles = styled.div`
 `;
 
 const GigStyles = styled.div`
+  flex-basis: 100px;
+  height: 100vw;
   width: 33%;
   flex: 1;
   order: 2;
   text-align: center;
+  margin: 5px;
+`;
+
+const EquipmentStyles = styled.div`
+  flex-basis: 100px;
+  height: 100vw;
+  width: 33%;
+  flex: 1;
+  order: 3;
+  text-align: center;
+  margin: 5px;
 `;
 
 class SingleDrummer extends Component {
@@ -92,9 +121,9 @@ class SingleDrummer extends Component {
     }
 
     return (
-      <div className="page-wrapper">
+      <PageWrapper>
         <Header />
-        <div className="content-wrapper">
+        <ContentWrapper>
           <div className="profile-wrapper">
             <ProfileStyles>
               <div className="profile-container">
@@ -125,9 +154,15 @@ class SingleDrummer extends Component {
               <h2>Gigs</h2>
             </GigStyles>
           </div>
-        </div>
+
+          <div className="equipment-wrapper">
+            <EquipmentStyles>
+              <h2>Equipment</h2>
+            </EquipmentStyles>
+          </div>
+        </ContentWrapper>
         <Footer />
-      </div>
+      </PageWrapper>
     );
   }
 }
