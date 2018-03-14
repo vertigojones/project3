@@ -4,6 +4,7 @@ import { Redirect } from "react-router";
 import axios from "axios";
 import styled from "styled-components";
 import UpdateDrummer from "./UpdateDrummer";
+import Gigs from "../gigs/Gigs"
 
 const ProfileStyles = styled.div``;
 
@@ -68,6 +69,7 @@ class SingleDrummer extends Component {
             <h4>Location: {this.state.drummer.location}</h4>
             <h4>Instruments: {this.state.drummer.instruments}</h4>
             <h4>Styles: {this.state.drummer.styles}</h4>
+            {/* <h4>Gigs: {[this.state.drummer.gigs]}</h4> */}
           </div>
           <button onClick={this.toggleShowUpdate}>
             Update {this.state.drummer.name}
