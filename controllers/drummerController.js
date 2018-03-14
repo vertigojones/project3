@@ -54,7 +54,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// delete creature
+// delete drummer
 router.delete("/:id", async (req, res) => {
   try {
     const drummerId = req.params.id;

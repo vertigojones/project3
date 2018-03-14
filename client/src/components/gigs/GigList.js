@@ -5,8 +5,8 @@ class GigList extends Component {
   render() {
     return (
       <div>
-        {this.props.gigList.map((gig, i) => {
-          return <Gigs key={i} gig={gig} />;
+        {this.props.gigList.map((gigs, i) => {
+          return <Gigs key={i} gigs={gigs} />;
         })}
       </div>
     );

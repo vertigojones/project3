@@ -18,6 +18,7 @@ db.on("error", err => {
 
 // set up the equipment
 const jazzSet = new Equipment({
+  set: "Jazz set",
   cymbals: [
     '20" Zildjian sizzle ride, 15" Zildjian sizzle crash, 13" Zildjian Avedis hi-hats'
   ],
@@ -33,6 +34,7 @@ const jazzSet = new Equipment({
 });
 
 const rockSet = new Equipment({
+  set: "Rock set",
   cymbals: [
     '22" Zildjian K ride, 18" Zildjian K crash, 16" Zildjian K crash, 14" Zildjian Quick-Beat hi-hats, 10" Zildjian K splash'
   ],
@@ -48,6 +50,7 @@ const rockSet = new Equipment({
 });
 
 const popSet = new Equipment({
+  set: "Pop set",
   cymbals: [
     '20" Zildjian sizzle ride, 18" Zildjian K crash, 15" Zildjian sizzle crash, 14" Zildjian Quick-Beat hi-hats, 10" Zildjian K splash'
   ],
@@ -63,6 +66,7 @@ const popSet = new Equipment({
 });
 
 const folkSet = new Equipment({
+  set: "Folk set",
   cymbals: ['18" Sabian Omni ride, 14" Zildjian Quick-Beat hi-hats'],
   drums: ['18" Gretsch Catalina kick drum, 13" Gretsch Brooklyn steel snare'],
   hardware: ["Boom cymbal stand, Belt-driven kick pedal, Rock 'n' Sock throne"],
@@ -70,11 +74,13 @@ const folkSet = new Equipment({
 });
 
 const triangle = new Equipment({
+  set: "Triangle",
   hardware: ["Triangle"],
   other: ["Clanger, Anti-anxiety medication"]
 });
 
 const bongos = new Equipment({
+  set: "Bongos",
   cymbals: ['10" Zildjian K splash'],
   drums: ["LP Percussion bongos"],
   hardware: ["Bongo stand, Splash clamp"],
@@ -89,6 +95,7 @@ const mbs = new Gigs({
   venue: "Mercedes-Benz Stadium",
   location: "Atlanta, GA",
   artist: "Metallica",
+  set: "Rock set",
   equipment: [rockSet]
 });
 
@@ -100,6 +107,7 @@ const eddiesAttic = new Gigs({
   venue: "Eddie's Attic",
   location: "Decatur, GA",
   artist: "Ceca",
+  set: "Folk set",
   equipment: [folkSet]
 });
 
@@ -111,6 +119,7 @@ const tabernacle = new Gigs({
   venue: "The Tabernacle",
   location: "Atlanta, GA",
   artist: "St Vincent",
+  set: "Pop set",
   equipment: [popSet]
 });
 
@@ -121,6 +130,7 @@ const symphony = new Gigs({
   venue: "Atlanta Symphony Hall",
   location: "Atlanta, GA",
   artist: "ASO",
+  set: "Triangle",
   equipment: [triangle]
 });
 
@@ -132,6 +142,7 @@ const fourSeasons = new Gigs({
   venue: "Four Seasons",
   location: "Atlanta, GA",
   artist: "Boz Scaggs Jazz Trio",
+  set: "Jazz set",
   equipment: [jazzSet]
 });
 
@@ -143,6 +154,7 @@ const fortyWatt = new Gigs({
   venue: "40 Watt Club",
   location: "Athens, GA",
   artist: "Caribbean Steel",
+  set: "Bongos",
   equipment: [bongos]
 });
 
@@ -156,7 +168,7 @@ const murph = new Drummer({
   location: "Atlanta",
   instruments: ["Drums, Bongos, Triangle"],
   styles: ["Electronic, Rock, Pop, Serbian Folk"],
-  gigs: [ eddiesAttic, tabernacle, symphony]
+  gigs: [eddiesAttic, tabernacle, symphony]
 });
 
 const cameron = new Drummer({
@@ -168,7 +180,7 @@ const cameron = new Drummer({
   location: "The Village",
   instruments: ["Drums, Percussion, Washboard"],
   styles: ["Hardcore, Screamo, Latin, Easy Listening"],
-  gigs: [ mbs, fourSeasons, fortyWatt]
+  gigs: [mbs, fourSeasons, fortyWatt]
 });
 
 // remove all Equipment

@@ -84,6 +84,7 @@ class SingleDrummer extends Component {
   state = {
     drummer: {},
     gigList: [],
+    equipmentList: [],
     updateDrummer: false,
     redirect: false
   };
@@ -100,7 +101,10 @@ class SingleDrummer extends Component {
     const drummerId = this.props.match.params.id;
     const res = await axios.get(`/api/drummer/${drummerId}`);
     const drummer = res.data;
+    console.log(drummer)
     this.setState({ drummer });
+    this.setState({ gigList: res.data.gigs })
+    console.log(this.state.gigs)
   };
   remove = () => {
     const drummerId = this.props.match.params.id;
@@ -126,12 +130,12 @@ class SingleDrummer extends Component {
             <div className="profile-wrapper">
               <div className="profile-container">
                 <h2>{this.state.drummer.name}</h2>
-                <button onClick={this.remove}>
-                  Remove {this.state.drummer.name}
-                </button>
                 <ImageStyles>
                   <img src={this.state.drummer.image} alt="Drummer Profile" />
                 </ImageStyles>
+                <button onClick={this.remove}>
+                  Remove {this.state.drummer.name}
+                </button>
                 <h4>Gender: {this.state.drummer.gender}</h4>
                 <h4>Age: {this.state.drummer.age}</h4>
                 <h4>Location: {this.state.drummer.location}</h4>
@@ -148,9 +152,8 @@ class SingleDrummer extends Component {
           </ProfileStyles>
           <GigStyles>
             <div className="gig-wrapper">
-              <h2>Gigs</h2>
-              <GigList gigList={this.state.gigList}/>
-              
+              <h2>Gig Calendar</h2>
+              <GigList gigList={this.state.gigList}/>             
             </div>
           </GigStyles>
           <EquipmentStyles>
