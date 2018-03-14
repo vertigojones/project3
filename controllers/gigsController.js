@@ -4,7 +4,7 @@ const Drummers = require('../models/drummers')
 const Gigs = require('../models/gigs')
 
 // index
-router.get('/:id/gigs', (req, res) => {
+router.get('/:id', (req, res) => {
     // find drummer by id
     Drummers.findById(req.params.id).then((drummer) => {
         console.log(drummer)

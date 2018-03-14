@@ -21,7 +21,7 @@ const ContentWrapper = styled.div`
   flex-grow: 1;
   display: flex;
   justify-content: space-around;
-  
+
   button {
     padding: 5px;
     margin: 10px 0px;
@@ -53,7 +53,7 @@ const ProfileStyles = styled.div`
 const ImageStyles = styled.div`
   img {
     height: 250px;
-    margin: 0 auto;
+    margin: auto;
     border-radius: 15px;
     padding: 5px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
@@ -124,8 +124,8 @@ class SingleDrummer extends Component {
       <PageWrapper>
         <Header />
         <ContentWrapper>
-          <div className="profile-wrapper">
-            <ProfileStyles>
+          <ProfileStyles>
+            <div className="profile-wrapper">
               <div className="profile-container">
                 <h2>{this.state.drummer.name}</h2>
                 <button onClick={this.remove}>
@@ -146,20 +146,18 @@ class SingleDrummer extends Component {
                   <UpdateDrummer drummer={this.state.drummer} />
                 ) : null}
               </div>
-            </ProfileStyles>
-          </div>
-
-          <div className="gig-wrapper">
-            <GigStyles>
+            </div>
+          </ProfileStyles>
+          <GigStyles>
+            <div className="gig-wrapper">
               <h2>Gigs</h2>
-            </GigStyles>
-          </div>
-
-          <div className="equipment-wrapper">
-            <EquipmentStyles>
+            </div>
+          </GigStyles>
+          <EquipmentStyles>
+            <div className="equipment-wrapper">
               <h2>Equipment</h2>
-            </EquipmentStyles>
-          </div>
+            </div>
+          </EquipmentStyles>
         </ContentWrapper>
         <Footer />
       </PageWrapper>

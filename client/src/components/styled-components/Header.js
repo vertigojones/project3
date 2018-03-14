@@ -3,13 +3,14 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const HeaderStyles = styled.div`
-  display: flex;
-  justify-content: space-around;
+  width: 100%;
   padding: 8px;
   background: black;
   color: white;
+  text-align: center;
+
   h1 {
-    font-family: 'Sedgwick Ave Display', cursive;
+    font-family: "Sedgwick Ave Display", cursive;
     font-size: 54px;
   }
 `;
@@ -19,11 +20,7 @@ class Header extends Component {
     return (
       <HeaderStyles>
         <h1>Drummers' Checklist</h1>
-        <ul>
-          <li>
-            <Link to="/">All Drummers</Link>
-          </li>
-        </ul>
+        <Link to="/">All Drummers</Link>
       </HeaderStyles>
     );
   }
