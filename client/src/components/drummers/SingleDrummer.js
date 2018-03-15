@@ -161,7 +161,7 @@ class SingleDrummer extends Component {
           <EquipmentStyles>
             <div className="equipment-wrapper">
               <h2>Equipment</h2>
-              {/* <Equipment /> */}
+              <EquipmentList equipmentList={this.state.equipmentList} />
             </div>
           </EquipmentStyles>
         </ContentWrapper>
