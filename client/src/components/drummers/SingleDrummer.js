@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import UpdateDrummer from "./UpdateDrummer";
 import GigList from "../gigs/GigList";
-//import EquipmentList from "../equipment/EquipmentList";
+import EquipmentList from "../equipment/EquipmentList";
 import Header from "../styled-components/Header";
 import Footer from "../styled-components/Footer";
 
@@ -102,11 +102,12 @@ class SingleDrummer extends Component {
     const drummerId = this.props.match.params.id;
     const res = await axios.get(`/api/drummer/${drummerId}`);
     const drummer = res.data;
-    
+
     this.setState({ drummer });
     this.setState({ gigList: res.data.gigs });
-    //this.setState({ equipmentList: })
+    this.setState({ equipmentList: res.data.gigs });
   };
+
   remove = () => {
     const drummerId = this.props.match.params.id;
     this.setState({ redirect: true });
@@ -160,6 +161,7 @@ class SingleDrummer extends Component {
           <EquipmentStyles>
             <div className="equipment-wrapper">
               <h2>Equipment</h2>
+              {/* <Equipment /> */}
             </div>
           </EquipmentStyles>
         </ContentWrapper>

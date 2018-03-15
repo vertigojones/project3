@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+//import axios from "axios";
+import EquipmentName from "./EquipmentName";
 
 const ImageWrapper = styled.div`
   img {
@@ -25,7 +27,11 @@ class Gigs extends Component {
         <h4>Venue: {this.props.gigs.venue}</h4>
         <h4>Location: {this.props.gigs.location}</h4>
         <h4>Artist: {this.props.gigs.artist}</h4>
-        <h4>Setup: {this.props.gigs.set}</h4>
+        <div>
+          {this.props.gigs.equipment.map((equipment, i) => {
+            return <EquipmentName key={i} equipment={equipment} />;
+          })}
+        </div>
         <button onClick={this.toggleShowUpdate}>
           Update {this.props.gigs.venue}
         </button>

@@ -4,7 +4,7 @@ class Equipment extends Component {
     render() {
         return (
             <div>
-                <h4>{this.props.gigs.equipment.set}</h4>
+                
             </div>
         );
     }
