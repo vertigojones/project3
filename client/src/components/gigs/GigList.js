@@ -6,7 +6,9 @@ class GigList extends Component {
     return (
       <div>
         {this.props.gigList.map((gigs, i) => {
-          return <Gigs key={i} gigs={gigs} />;
+          return <Gigs key={i} gigs={gigs} 
+          gigId={this._id}
+          drummerId={this.props.drummerId}/>;
         })}
       </div>
     );

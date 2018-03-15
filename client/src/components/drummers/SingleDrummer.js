@@ -164,7 +164,9 @@ class SingleDrummer extends Component {
             <GigStyles>
               <div className="gig-wrapper">
                 <h2>Gig Calendar</h2>
-                <GigList gigList={this.state.gigList} />
+                <GigList gigList={this.state.gigList}
+                drummerId={this.state.drummer._id}
+                 />
               </div>
             </GigStyles>
             <EquipmentStyles>

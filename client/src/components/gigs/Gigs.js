@@ -14,21 +14,23 @@ const ImageWrapper = styled.div`
   }
 `;
 
-// deleteGig = gig => {
-//   const drummerId = this.props.match.params.id;
-//   axios.delete(`/api/user/${drummerId}/gigs/${gig._id}`).then(res => {
-//     this.setState({ gigs: res.data.gigs });
-//   });
-// };
-
 class Gigs extends Component {
+  deleteGig = gig => {
+    const drummerId = this.props.drummerId;
+    const gigId = this.props.gigs._id
+    console.log(gigId)
+    axios.delete(`/api/drummer/${drummerId}/gigs/${gigId}`).then(res => {
+      this.setState({ gigs: res.data.gigs });
+    });
+  };
+
   render() {
     return (
       <div>
         <ImageWrapper>
           <img src={this.props.gigs.image} alt="Venue" />
         </ImageWrapper>
-        <button onClick={this.remove}>Remove {this.props.gigs.venue}</button>
+        <button onClick={this.deleteGig}>Remove {this.props.gigs.venue}</button>
         <h4>Date: {this.props.gigs.date}</h4>
         <h4>Time: {this.props.gigs.time}</h4>
         <h4>Venue: {this.props.gigs.venue}</h4>
