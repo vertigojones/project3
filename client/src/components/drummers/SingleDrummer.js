@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import UpdateDrummer from "./UpdateDrummer";
 import GigList from "../gigs/GigList";
-import EquipmentList from "../equipment/EquipmentList";
+//import EquipmentList from "../equipment/EquipmentList";
 import Header from "../styled-components/Header";
 import Footer from "../styled-components/Footer";
 
@@ -85,6 +85,7 @@ class SingleDrummer extends Component {
   state = {
     drummer: {},
     gigList: [],
+    equipmentList: [],
     updateDrummer: false,
     redirect: false
   };
@@ -101,10 +102,10 @@ class SingleDrummer extends Component {
     const drummerId = this.props.match.params.id;
     const res = await axios.get(`/api/drummer/${drummerId}`);
     const drummer = res.data;
-    console.log(drummer);
+    
     this.setState({ drummer });
     this.setState({ gigList: res.data.gigs });
-    console.log(this.state.gigs);
+    //this.setState({ equipmentList: })
   };
   remove = () => {
     const drummerId = this.props.match.params.id;
