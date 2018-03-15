@@ -22,6 +22,13 @@ const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-around;
 
+  @media (max-width: 400px){
+  main {
+    flex-direction: column;
+  }
+
+}
+
   button {
     padding: 5px;
     margin: 10px 0px;
@@ -42,7 +49,7 @@ const ContentWrapper = styled.div`
 
 const ProfileStyles = styled.div`
   flex-basis: 100px;
-  height: 100vw;
+  /* height: 100vw; */
   width: 34%;
   flex: 1;
   order: 1;
@@ -52,7 +59,7 @@ const ProfileStyles = styled.div`
 
 const ImageStyles = styled.div`
   img {
-    height: 300px;
+    width: 75%;
     margin: auto;
     border-radius: 15px;
     padding: 5px;
@@ -63,7 +70,7 @@ const ImageStyles = styled.div`
 
 const GigStyles = styled.div`
   flex-basis: 100px;
-  height: 100vw;
+  /* height: 100vw; */
   width: 33%;
   flex: 1;
   order: 2;
@@ -73,7 +80,7 @@ const GigStyles = styled.div`
 
 const EquipmentStyles = styled.div`
   flex-basis: 100px;
-  height: 100vw;
+  /* height: 100vw; */
   width: 33%;
   flex: 1;
   order: 3;
