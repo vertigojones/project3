@@ -8,10 +8,13 @@ const HeaderStyles = styled.div`
   background: black;
   color: white;
   text-align: center;
+  font-size: 24px;
+  text-shadow: 1px 2px white;
+  font-family: "Cousine", monospace;
 
   h1 {
     font-family: "Sedgwick Ave Display", cursive;
-    font-size: 54px;
+    font-size: 62px;
   }
 `;
 

@@ -1,18 +1,25 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-//import axios from "axios";
 import EquipmentName from "./EquipmentName";
+import axios from "axios";
 
 const ImageWrapper = styled.div`
   img {
-    width: 50%;
+    width: 60%;
     margin: auto;
     border-radius: 15px;
-    padding: 5px;
+    padding: 10px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
       0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 `;
+
+// deleteGig = gig => {
+//   const drummerId = this.props.match.params.id;
+//   axios.delete(`/api/user/${drummerId}/gigs/${gig._id}`).then(res => {
+//     this.setState({ gigs: res.data.gigs });
+//   });
+// };
 
 class Gigs extends Component {
   render() {

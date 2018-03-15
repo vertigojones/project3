@@ -34,8 +34,8 @@ router.post("/:id", (req, res) => {
 
 // delete gig
 router.delete("/:id", (req, res) => {
-  Drummers.findById(req.params.id)
-    .then(user => {
+  Drummers.findById(req.params.drummerId)
+    .then(drummer => {
       drummer.gigs.id(req.params.id).remove();
       return drummer.save();
     })
