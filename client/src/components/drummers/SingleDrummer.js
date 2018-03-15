@@ -47,12 +47,12 @@ const ProfileStyles = styled.div`
   flex: 1;
   order: 1;
   text-align: center;
-  margin: 5px;
+  margin: 10px;
 `;
 
 const ImageStyles = styled.div`
   img {
-    height: 250px;
+    height: 300px;
     margin: auto;
     border-radius: 15px;
     padding: 5px;
@@ -68,7 +68,7 @@ const GigStyles = styled.div`
   flex: 1;
   order: 2;
   text-align: center;
-  margin: 5px;
+  margin: 10px;
 `;
 
 const EquipmentStyles = styled.div`
@@ -78,7 +78,7 @@ const EquipmentStyles = styled.div`
   flex: 1;
   order: 3;
   text-align: center;
-  margin: 5px;
+  margin: 10px;
 `;
 
 class SingleDrummer extends Component {
@@ -149,6 +149,7 @@ class SingleDrummer extends Component {
                 {this.state.updateDrummer ? (
                   <UpdateDrummer drummer={this.state.drummer} />
                 ) : null}
+                <hr />
               </div>
             </div>
           </ProfileStyles>

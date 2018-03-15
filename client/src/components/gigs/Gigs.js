@@ -35,6 +35,7 @@ class Gigs extends Component {
         <button onClick={this.toggleShowUpdate}>
           Update {this.props.gigs.venue}
         </button>
+        <hr />
       </div>
     );
   }

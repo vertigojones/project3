@@ -18,6 +18,8 @@ db.on("error", err => {
 
 // set up the equipment
 const jazzSet = new Equipment({
+  image:
+    "https://images-na.ssl-images-amazon.com/images/I/71Twc9ZMkOL._SL1500_.jpg",
   set: "Jazz set",
   cymbals: [
     '20" Zildjian sizzle ride, 15" Zildjian sizzle crash, 13" Zildjian Avedis hi-hats'
@@ -34,6 +36,8 @@ const jazzSet = new Equipment({
 });
 
 const rockSet = new Equipment({
+  image:
+    "https://media.sweetwater.com/images/items/750/DRKT45A-large.jpg?v=77a13ff1d7d0c4c3",
   set: "Rock set",
   cymbals: [
     '22" Zildjian K ride, 18" Zildjian K crash, 16" Zildjian K crash, 14" Zildjian Quick-Beat hi-hats, 10" Zildjian K splash'
@@ -50,6 +54,8 @@ const rockSet = new Equipment({
 });
 
 const popSet = new Equipment({
+  image:
+    "https://2f9nwjerubq3js2g22m30fjx-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/coll-fp-goldglass.jpg",
   set: "Pop set",
   cymbals: [
     '20" Zildjian sizzle ride, 18" Zildjian K crash, 15" Zildjian sizzle crash, 14" Zildjian Quick-Beat hi-hats, 10" Zildjian K splash'
@@ -66,6 +72,8 @@ const popSet = new Equipment({
 });
 
 const folkSet = new Equipment({
+  image:
+    "https://i.pinimg.com/474x/0a/32/c0/0a32c051c1dc44942b1214215dc20825--the-farmer-drums.jpg",
   set: "Folk set",
   cymbals: ['18" Sabian Omni ride, 14" Zildjian Quick-Beat hi-hats'],
   drums: ['18" Gretsch Catalina kick drum, 13" Gretsch Brooklyn steel snare'],
@@ -74,17 +82,21 @@ const folkSet = new Equipment({
 });
 
 const triangle = new Equipment({
+  image:
+    "http://westmusic.cachefly.net/getDynamicImage.aspx?w=800&h=800&b=00ffffff&path=Sonor-LTR-15-Triangle-6.jpg",
   set: "Triangle",
   hardware: ["Triangle"],
   other: ["Clanger, Anti-anxiety medication"]
 });
 
-const bongos = new Equipment({
-  set: "Bongos",
+const congas = new Equipment({
+  image:
+    "http://westmusic.cachefly.net/getDynamicImage.aspx?w=800&h=800&b=00ffffff&path=Tycoon-Supremo-10-and-11-Conga-Set-Natural-with-Stand.jpg",
+  set: "Congas",
   cymbals: ['10" Zildjian K splash'],
-  drums: ["LP Percussion bongos"],
-  hardware: ["Bongo stand, Splash clamp"],
-  other: ["Hand percussion gloves, Bongo cases, Bottle of tequilla"]
+  drums: ["LP Percussion congas"],
+  hardware: ["Congas stand, Splash clamp"],
+  other: ["Hand percussion gloves, Congas cases, Bottle of tequilla"]
 });
 
 // set up the gigs
@@ -155,7 +167,7 @@ const fortyWatt = new Gigs({
   location: "Athens, GA",
   artist: "Caribbean Steel",
   set: "Bongos",
-  equipment: [bongos]
+  equipment: [congas]
 });
 
 // set up the drummers (users)
