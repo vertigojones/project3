@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Redirect } from "react-router";
 import axios from "axios";
 import styled from "styled-components";
-import { injectGlobal } from "styled-components";
 
 import UpdateDrummer from "./UpdateDrummer";
 import GigList from "../gigs/GigList";
@@ -10,12 +9,6 @@ import EquipmentList from "../equipment/EquipmentList";
 import Header from "../styled-components/Header";
 import Footer from "../styled-components/Footer";
 
-injectGlobal`
-@media (max-width: 400px){
-  main {
-    flex-direction: column;
-  }
-}`;
 
 const PageWrapper = styled.div`
   min-height: 100vh;
@@ -30,6 +23,10 @@ const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   font-size: 14px;
+  @media (max-width: 400px){
+    flex-direction: column;
+  }
+}
 }
 
   button {
