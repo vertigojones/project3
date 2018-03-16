@@ -47,8 +47,6 @@ class Gigs extends Component {
           {this.state.showNewForm ? (
             <NewGigForm ={this.getAllDrummers} />
           ) : null} */}
-          <button>Create New Gig</button>
-          <hr />
         <ImageWrapper>
           <img src={this.props.gigs.image} alt="Venue" />
         </ImageWrapper>

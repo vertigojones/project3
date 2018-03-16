@@ -16,8 +16,6 @@ class Equipment extends Component {
   render() {
     return (
       <div>
-        <button>Create New Equipment</button>
-        <hr />
         <ImageWrapper>
           <img src={this.props.equipment.image} alt="Equipment" />
         </ImageWrapper>

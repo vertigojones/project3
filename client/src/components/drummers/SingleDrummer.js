@@ -9,7 +9,6 @@ import EquipmentList from "../equipment/EquipmentList";
 import Header from "../styled-components/Header";
 import Footer from "../styled-components/Footer";
 
-
 const PageWrapper = styled.div`
   min-height: 100vh;
   margin: 0 auto;
@@ -161,14 +160,19 @@ class SingleDrummer extends Component {
             <GigStyles>
               <div className="gig-wrapper">
                 <h2>Gig Calendar</h2>
-                <GigList gigList={this.state.gigList}
-                drummerId={this.state.drummer._id}
-                 />
+                <button>Create New Gig</button>
+                <hr />
+                <GigList
+                  gigList={this.state.gigList}
+                  drummerId={this.state.drummer._id}
+                />
               </div>
             </GigStyles>
             <EquipmentStyles>
               <div className="equipment-wrapper">
                 <h2>Equipment</h2>
+                <button>Create New Equipment</button>
+                <hr />
                 <EquipmentList equipmentList={this.state.equipmentList} />
               </div>
             </EquipmentStyles>
