@@ -30,7 +30,7 @@ const ContentWrapper = styled.div`
 }
 
   button {
-    padding: 5px;
+    padding: 10px;
     margin: 10px 0px;
     border-radius: 5px;
     cursor: pointer;

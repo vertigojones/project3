@@ -9,6 +9,17 @@ injectGlobal`
 @import url('https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display');
 @import url('https://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo');
 @import url('https://fonts.googleapis.com/css?family=Cousine');
+
+button {
+  padding: 10px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: Black;
+    color: white;
+}
 `;
 
 class App extends Component {
