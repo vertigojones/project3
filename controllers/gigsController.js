@@ -20,10 +20,19 @@ router.get("/:id", (req, res) => {
 });
 
 // create gig
-router.post("/:id", (req, res) => {
+router.post("/", (req, res) => {
   Drummers.findById(req.params.drummerId)
     .then(drummer => {
-      const newGig = new Gigs({});
+      const newGig = new Gigs({
+        image: req.body.image,
+        date: req.body.date,
+        time: req.body.time,
+        venue: req.body.venue,
+        location: req.body.location,
+        artist: req.body.artist,
+        set: req.body.set,
+        equipment: req.body.equipment
+      });
       drummer.gigs.push(newGig);
       return drummer.save();
     })
