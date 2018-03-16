@@ -12,6 +12,9 @@ injectGlobal`
 
 button {
   padding: 10px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    cursor: pointer;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }

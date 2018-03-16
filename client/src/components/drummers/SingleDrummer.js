@@ -25,8 +25,6 @@ const ContentWrapper = styled.div`
   @media (max-width: 400px){
     flex-direction: column;
   }
-}
-}
 
   button {
     padding: 10px;
@@ -172,7 +170,7 @@ class SingleDrummer extends Component {
               <div className="equipment-wrapper">
                 <h2>Equipment</h2>
                 <button>Create New Equipment</button>
-                <hr />
+        <hr />
                 <EquipmentList equipmentList={this.state.equipmentList} />
               </div>
             </EquipmentStyles>
