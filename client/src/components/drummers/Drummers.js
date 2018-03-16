@@ -6,7 +6,20 @@ import NewDrummerForm from "./NewDrummerForm";
 import styled from "styled-components";
 
 const ContentWrapper = styled.div`
-  background-image: url("https://i.pinimg.com/originals/04/ba/1a/04ba1a443c6d41fe381c9cd681a934ca.jpg");
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  font-family: "Cousine", monospace;
+  font-size: 24px;
+  text-shadow: 2px 2px white;
+  background-image: url("https://i.imgur.com/lj3o18m.jpg?2");
+`;
+
+const HeaderWrapper = styled.div`
+  font-family: "Sedgwick Ave Display", cursive;
+  font-size: 64px;
+  text-shadow: 5px 5px white;
+  text-align: center;
 `;
 
 class Drummers extends Component {
@@ -30,7 +43,9 @@ class Drummers extends Component {
     return (
       <ContentWrapper>
         <div>
-          <h2>Welcome to The Beatmakers</h2>
+          <HeaderWrapper>
+            <h1>Welcome to The Beatmakers!</h1>
+          </HeaderWrapper>
           {this.state.drummers.map(drummer => (
             <Link key={drummer._id} to={`/${drummer._id}`}>
               <h3>Name: {drummer.name}</h3>

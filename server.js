@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
 
 app.use('/api/drummer', drummerController)
 app.use('/api/drummer/:drummerId/gigs', gigsController)
-//app.use('/api/drummer/:userId/:gigId/equipment', equipmentController)
+//app.use('/api/drummer/:drummerId/gigs/:gigId/equipment', equipmentController)
 
 app.get("/", (req, res) => {
     res.sendFile(`${__dirname}/client/build/index.html`);

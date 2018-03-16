@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import EquipmentName from "./EquipmentName";
 import axios from "axios";
+import NewGigForm from "./NewGigForm";
 
 const ImageWrapper = styled.div`
   img {
@@ -15,10 +16,17 @@ const ImageWrapper = styled.div`
 `;
 
 class Gigs extends Component {
+  createNewGig = () => {
+    const drummerId = this.props.drummerId;
+    axios.post(`/api/drummer/${drummerId}/gigs`).then(res => {
+      this.setState({ gigs: res.data.gigs });
+    });
+  };
+
   deleteGig = gig => {
     const drummerId = this.props.drummerId;
-    const gigId = this.props.gigs._id
-    console.log(gigId)
+    const gigId = this.props.gigs._id;
+    console.log(gigId);
     axios.delete(`/api/drummer/${drummerId}/gigs/${gigId}`).then(res => {
       this.setState({ gigs: res.data.gigs });
     });

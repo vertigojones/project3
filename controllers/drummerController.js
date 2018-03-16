@@ -60,7 +60,7 @@ router.delete("/:id", async (req, res) => {
     const drummerId = req.params.id;
     await Drummers.findByIdAndRemove(drummerId);
     res.json({
-      msg: "Successfully Deleted"
+      msg: "Drummer Deleted"
     });
   } catch (err) {
     console.log(err);

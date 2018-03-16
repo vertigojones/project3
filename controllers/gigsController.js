@@ -19,15 +19,15 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// new gig
+// create gig
 router.post("/:id", (req, res) => {
-  Drummers.findById(req.params.id)
-    .then(user => {
+  Drummers.findById(req.params.drummerId)
+    .then(drummer => {
       const newGig = new Gigs({});
-      drummer.gig.push(newGig);
+      drummer.gigs.push(newGig);
       return drummer.save();
     })
-    .then(saveDrummer => {
+    .then(savedDrummer => {
       res.send(savedDrummer);
     });
 });
