@@ -35,6 +35,10 @@ class Gigs extends Component {
   render() {
     return (
       <div>
+          {/* <button onClick={this.toggleShowNewForm}>Create New Gig</button>
+          {this.state.showNewForm ? (
+            <NewGigForm getAllDrummers={this.getAllDrummers} />
+          ) : null} */}
         <ImageWrapper>
           <img src={this.props.gigs.image} alt="Venue" />
         </ImageWrapper>
