@@ -50,6 +50,7 @@ class Gigs extends Component {
             return <EquipmentName key={i} equipment={equipment} />;
           })}
         </div>
+        <h4>Notes: {this.props.gigs.notes}</h4>
         <button onClick={this.toggleShowUpdate}>
           Update {this.props.gigs.venue}
         </button>

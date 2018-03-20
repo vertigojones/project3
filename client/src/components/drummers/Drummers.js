@@ -38,6 +38,7 @@ class Drummers extends Component {
     const res = await axios.get("/api/drummer");
     this.setState({ drummers: res.data });
   };
+  
   toggleShowNewForm = () => {
     this.setState({ showNewForm: !this.state.showNewForm });
   };
