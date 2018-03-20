@@ -107,8 +107,8 @@ const mbs = new Gigs({
   venue: "Mercedes-Benz Stadium",
   location: "Atlanta, GA",
   artist: "Metallica",
-  set: "Rock set",
-  equipment: [rockSet]
+  equipment: [rockSet],
+  notes: "Nothing to add!"
 });
 
 const eddiesAttic = new Gigs({
@@ -120,7 +120,8 @@ const eddiesAttic = new Gigs({
   location: "Decatur, GA",
   artist: "Ceca",
   set: "Folk set",
-  equipment: [folkSet]
+  equipment: [folkSet],
+  notes: "Also bring towel."
 });
 
 const tabernacle = new Gigs({
@@ -131,8 +132,8 @@ const tabernacle = new Gigs({
   venue: "The Tabernacle",
   location: "Atlanta, GA",
   artist: "St Vincent",
-  set: "Pop set",
-  equipment: [popSet]
+  equipment: [popSet],
+  notes: "Also bring dinner, this place has no food!"
 });
 
 const symphony = new Gigs({
@@ -142,8 +143,8 @@ const symphony = new Gigs({
   venue: "Atlanta Symphony Hall",
   location: "Atlanta, GA",
   artist: "ASO",
-  set: "Triangle",
-  equipment: [triangle]
+  equipment: [triangle],
+  notes: "Make sure to not be late!"
 });
 
 const fourSeasons = new Gigs({
@@ -154,8 +155,8 @@ const fourSeasons = new Gigs({
   venue: "Four Seasons",
   location: "Atlanta, GA",
   artist: "Boz Scaggs Jazz Trio",
-  set: "Jazz set",
-  equipment: [jazzSet]
+  equipment: [jazzSet],
+  notes: "Park out back. Also bring water bottle. And spare snare."
 });
 
 const fortyWatt = new Gigs({
@@ -166,8 +167,8 @@ const fortyWatt = new Gigs({
   venue: "40 Watt Club",
   location: "Athens, GA",
   artist: "Caribbean Steel",
-  set: "Bongos",
-  equipment: [congas]
+  equipment: [congas],
+  notes: "Also bring margherita mix!!! And towel."
 });
 
 // set up the drummers (users)

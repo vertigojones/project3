@@ -30,8 +30,8 @@ router.post("/", (req, res) => {
         venue: req.body.venue,
         location: req.body.location,
         artist: req.body.artist,
-        set: req.body.set,
-        equipment: req.body.equipment
+        equipment: req.body.equipment,
+        notes: req.body.notes
       });
       drummer.gigs.push(newGig);
       return drummer.save();

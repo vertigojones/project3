@@ -16,7 +16,6 @@ class GigList extends Component {
       <div>
         <button onClick={this.toggleShowNewForm}>Create New Gig</button>
         {this.state.showNewForm ? <NewGigForm /> : null}
-
         <hr />
         {this.props.gigList.map((gigs, i) => {
           return (

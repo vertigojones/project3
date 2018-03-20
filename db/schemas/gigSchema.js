@@ -10,8 +10,8 @@ const gigSchema = new Schema ({
     venue: String,
     location: String,
     artist: String,
-    set: String,
-    equipment: [ equipmentSchema ]
+    equipment: [ equipmentSchema ],
+    notes: String
 })
 
 module.exports = gigSchema
