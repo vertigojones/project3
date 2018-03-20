@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import EquipmentName from "./EquipmentName";
 import axios from "axios";
-//import NewGigForm from "./NewGigForm";
 
 const ImageWrapper = styled.div`
   img {
@@ -16,14 +15,7 @@ const ImageWrapper = styled.div`
 `;
 
 class Gigs extends Component {
-  state = {
-    showNewForm: false
-  };
-
-  toggleShowNewForm = () => {
-    this.setState({ showNewForm: !this.state.showNewForm });
-  };
-
+  
   createNewGig = () => {
     const drummerId = this.props.drummerId;
     axios.post(`/api/drummer/${drummerId}/gigs`).then(res => {
@@ -43,10 +35,7 @@ class Gigs extends Component {
   render() {
     return (
       <div>
-        {/* <button onClick={this.toggleShowNewForm}>Create New Gig</button>
-          {this.state.showNewForm ? (
-            <NewGigForm ={this.getAllDrummers} />
-          ) : null} */}
+       
         <ImageWrapper>
           <img src={this.props.gigs.image} alt="Venue" />
         </ImageWrapper>

@@ -13,6 +13,9 @@ const ContentWrapper = styled.div`
   font-size: 24px;
   text-shadow: 2px 2px white;
   background-image: url("https://i.imgur.com/lj3o18m.jpg?2");
+  background-position: center;
+  background-size: cover;
+  width: 100vw; 
 `;
 
 const HeaderWrapper = styled.div`

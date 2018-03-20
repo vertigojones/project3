@@ -158,8 +158,8 @@ class SingleDrummer extends Component {
             <GigStyles>
               <div className="gig-wrapper">
                 <h2>Gig Calendar</h2>
-                <button>Create New Gig</button>
-                <hr />
+                {/* <button>Create New Gig</button> */}
+                
                 <GigList
                   gigList={this.state.gigList}
                   drummerId={this.state.drummer._id}

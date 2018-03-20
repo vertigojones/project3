@@ -19,6 +19,7 @@ __Still to fix/bugs:__
 - Styling on landing page.
 - Full responsiveness.
 - Better look to forms popping up.
+- Fully working on Heroku.
 
 ---
 
@@ -27,4 +28,4 @@ __Version 2.0:__
 - Better connection between Gigs and Equipment models.
 - Create radio buttons for adding equipment in gigs column.
 - Expand to be inclusive of other instruments (except bass players).
-
+- Add notes to gigs.

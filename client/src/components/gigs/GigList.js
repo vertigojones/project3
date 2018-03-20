@@ -1,10 +1,23 @@
 import React, { Component } from "react";
 import Gigs from "./Gigs";
+import NewGigForm from "./NewGigForm";
 
 class GigList extends Component {
+  state = {
+    showNewForm: false
+  };
+
+  toggleShowNewForm = () => {
+    this.setState({ showNewForm: !this.state.showNewForm });
+  };
+
   render() {
     return (
       <div>
+        <button onClick={this.toggleShowNewForm}>Create New Gig</button>
+        {this.state.showNewForm ? <NewGigForm /> : null}
+
+        <hr />
         {this.props.gigList.map((gigs, i) => {
           return (
             <Gigs
