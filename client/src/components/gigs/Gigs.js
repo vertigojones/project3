@@ -34,8 +34,7 @@ class Gigs extends Component {
 
   render() {
     return (
-      <div>
-       
+      <div>      
         <ImageWrapper>
           <img src={this.props.gigs.image} alt="Venue" />
         </ImageWrapper>

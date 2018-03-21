@@ -22,7 +22,7 @@ const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   font-size: 14px;
-  @media (max-width: 400px){
+  @media (max-width: 400px) {
     flex-direction: column;
   }
 
@@ -109,6 +109,12 @@ class SingleDrummer extends Component {
     this.setState({ equipmentList: res.data.gigs });
   };
 
+  getAllGigs = async () => {
+    const drummerId = this.state.drummer._id
+    const res = await axios.get(`/api/drummer/${drummerId}`);
+    this.setState({ gigList: res.data.gigs });
+  };
+
   remove = () => {
     const drummerId = this.props.match.params.id;
     this.setState({ redirect: true });
@@ -158,8 +164,6 @@ class SingleDrummer extends Component {
             <GigStyles>
               <div className="gig-wrapper">
                 <h2>Gig Calendar</h2>
-                {/* <button>Create New Gig</button> */}
-                
                 <GigList
                   gigList={this.state.gigList}
                   drummerId={this.state.drummer._id}
@@ -170,7 +174,7 @@ class SingleDrummer extends Component {
               <div className="equipment-wrapper">
                 <h2>Equipment</h2>
                 <button>Create New Equipment</button>
-        <hr />
+                <hr />
                 <EquipmentList equipmentList={this.state.equipmentList} />
               </div>
             </EquipmentStyles>
