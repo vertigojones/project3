@@ -24,6 +24,7 @@ const ContentWrapper = styled.div`
   font-size: 14px;
   @media (max-width: 400px) {
     flex-direction: column;
+    width: 100;
   }
 
   button {
@@ -46,7 +47,6 @@ const ContentWrapper = styled.div`
 
 const ProfileStyles = styled.div`
   flex-basis: 100px;
-  width: 34%;
   flex: 1;
   order: 1;
   text-align: center;
@@ -66,7 +66,6 @@ const ImageStyles = styled.div`
 
 const GigStyles = styled.div`
   flex-basis: 100px;
-  width: 33%;
   flex: 1;
   order: 2;
   text-align: center;
@@ -75,7 +74,6 @@ const GigStyles = styled.div`
 
 const EquipmentStyles = styled.div`
   flex-basis: 100px;
-  width: 33%;
   flex: 1;
   order: 3;
   text-align: center;

@@ -12,8 +12,8 @@ const ContentWrapper = styled.div`
   font-family: "Cousine", monospace;
   font-size: 24px;
   text-shadow: 2px 2px white;
-  background-image: url("https://i.imgur.com/lj3o18m.jpg?2");
-  background-position: center;
+  background-image: url("https://i.imgur.com/Intt7gp.jpg?1");
+  background-position: absolute;
   background-size: cover;
   width: 100vw; 
 `;
@@ -38,7 +38,7 @@ class Drummers extends Component {
     const res = await axios.get("/api/drummer");
     this.setState({ drummers: res.data });
   };
-  
+
   toggleShowNewForm = () => {
     this.setState({ showNewForm: !this.state.showNewForm });
   };
