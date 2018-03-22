@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-const FormStyles = styled.div`
-  font-family: "Cousine", monospace;
-`;
-
 class UpdateDrummer extends Component {
   state = {
     drummer: {},
@@ -122,5 +118,9 @@ class UpdateDrummer extends Component {
     );
   }
 }
+
+const FormStyles = styled.div`
+  font-family: "Cousine", monospace;
+`;
 
 export default UpdateDrummer;

@@ -3,19 +3,7 @@ import styled from "styled-components";
 import EquipmentName from "./EquipmentName";
 import axios from "axios";
 
-const ImageWrapper = styled.div`
-  img {
-    width: 60%;
-    margin: auto;
-    border-radius: 15px;
-    padding: 10px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
-      0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-`;
-
 class Gigs extends Component {
-  
   createNewGig = () => {
     const drummerId = this.props.drummerId;
     axios.post(`/api/drummer/${drummerId}/gigs`).then(res => {
@@ -34,7 +22,7 @@ class Gigs extends Component {
 
   render() {
     return (
-      <div>      
+      <div>
         <ImageWrapper>
           <img src={this.props.gigs.image} alt="Venue" />
         </ImageWrapper>
@@ -58,5 +46,16 @@ class Gigs extends Component {
     );
   }
 }
+
+const ImageWrapper = styled.div`
+  img {
+    width: 60%;
+    margin: auto;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+`;
 
 export default Gigs;

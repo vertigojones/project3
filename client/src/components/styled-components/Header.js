@@ -2,6 +2,17 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+class Header extends Component {
+  render() {
+    return (
+      <HeaderStyles>
+        <h1>Drummers' Checklist</h1>
+        <Link to="/">All Drummers</Link>
+      </HeaderStyles>
+    );
+  }
+}
+
 const HeaderStyles = styled.div`
   width: 100%;
   padding: 8px;
@@ -17,16 +28,5 @@ const HeaderStyles = styled.div`
     font-size: 62px;
   }
 `;
-
-class Header extends Component {
-  render() {
-    return (
-      <HeaderStyles>
-        <h1>Drummers' Checklist</h1>
-        <Link to="/">All Drummers</Link>
-      </HeaderStyles>
-    );
-  }
-}
 
 export default Header;

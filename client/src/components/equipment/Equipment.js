@@ -1,17 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-const ImageWrapper = styled.div`
-  img {
-    width: 60%;
-    margin: auto;
-    border-radius: 15px;
-    padding: 10px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
-      0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-`;
-
 class Equipment extends Component {
   render() {
     return (
@@ -33,5 +22,16 @@ class Equipment extends Component {
     );
   }
 }
+
+const ImageWrapper = styled.div`
+  img {
+    width: 60%;
+    margin: auto;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+`;
 
 export default Equipment;

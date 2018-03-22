@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import styled from "styled-components";
 
 class NewGigForm extends Component {
   state = {
@@ -38,83 +39,89 @@ class NewGigForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div>
-          <label htmlFor="image">Image URL: </label>
-          <input
-            onChange={this.handleChange}
-            type="text"
-            name="image"
-            value={this.state.image}
-          />
-        </div>
-        <div>
-          <label htmlFor="name">Date: </label>
-          <input
-            onChange={this.handleChange}
-            type="text"
-            name="date"
-            value={this.state.date}
-          />
-        </div>
-        <div>
-          <label htmlFor="gender">Time: </label>
-          <input
-            onChange={this.handleChange}
-            type="text"
-            name="time"
-            value={this.state.time}
-          />
-        </div>
-        <div>
-          <label htmlFor="age">Venue: </label>
-          <input
-            onChange={this.handleChange}
-            type="text"
-            name="venue"
-            value={this.state.venue}
-          />
-        </div>
-        <div>
-          <label htmlFor="location">Location: </label>
-          <input
-            onChange={this.handleChange}
-            type="text"
-            name="location"
-            value={this.state.location}
-          />
-        </div>
-        <div>
-          <label htmlFor="instruments">Artist: </label>
-          <input
-            onChange={this.handleChange}
-            type="text"
-            name="artist"
-            value={this.state.artist}
-          />
-        </div>
-        <div>
-          <label htmlFor="styles">Equipment: </label>
-          <input
-            onChange={this.handleChange}
-            type="text"
-            name="equipment"
-            value={this.state.equipment}
-          />
-        </div>
-        <div>
-          <label htmlFor="styles">Notes: </label>
-          <input
-            onChange={this.handleChange}
-            type="text"
-            name="notes"
-            value={this.state.notes}
-          />
-        </div>
-        <button>Submit</button>
-      </form>
+      <StyleWrapper>
+        <form onSubmit={this.handleSubmit}>
+          <div>
+            <label htmlFor="image">Image URL: </label>
+            <input
+              onChange={this.handleChange}
+              type="text"
+              name="image"
+              value={this.state.image}
+            />
+          </div>
+          <div>
+            <label htmlFor="name">Date: </label>
+            <input
+              onChange={this.handleChange}
+              type="text"
+              name="date"
+              value={this.state.date}
+            />
+          </div>
+          <div>
+            <label htmlFor="gender">Time: </label>
+            <input
+              onChange={this.handleChange}
+              type="text"
+              name="time"
+              value={this.state.time}
+            />
+          </div>
+          <div>
+            <label htmlFor="age">Venue: </label>
+            <input
+              onChange={this.handleChange}
+              type="text"
+              name="venue"
+              value={this.state.venue}
+            />
+          </div>
+          <div>
+            <label htmlFor="location">Location: </label>
+            <input
+              onChange={this.handleChange}
+              type="text"
+              name="location"
+              value={this.state.location}
+            />
+          </div>
+          <div>
+            <label htmlFor="instruments">Artist: </label>
+            <input
+              onChange={this.handleChange}
+              type="text"
+              name="artist"
+              value={this.state.artist}
+            />
+          </div>
+          <div>
+            <label htmlFor="styles">Equipment: </label>
+            <input
+              onChange={this.handleChange}
+              type="text"
+              name="equipment"
+              value={this.state.equipment}
+            />
+          </div>
+          <div>
+            <label htmlFor="styles">Notes: </label>
+            <input
+              onChange={this.handleChange}
+              type="text"
+              name="notes"
+              value={this.state.notes}
+            />
+          </div>
+          <button>Submit</button>
+        </form>
+      </StyleWrapper>
     );
   }
 }
+
+const StyleWrapper = styled.div`
+  font-family: "Cousine", monospace;
+`;
 
 export default NewGigForm;

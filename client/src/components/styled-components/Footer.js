@@ -1,14 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-const FooterStyles = styled.div`
-  width: 100%;
-  padding: 10px;
-  background: black;
-  color: white;
-  text-align: center;
-`;
-
 class Footer extends Component {
   render() {
     return (
@@ -18,5 +10,13 @@ class Footer extends Component {
     );
   }
 }
+
+const FooterStyles = styled.div`
+  width: 100%;
+  padding: 10px;
+  background: black;
+  color: white;
+  text-align: center;
+`;
 
 export default Footer;
