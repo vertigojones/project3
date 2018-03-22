@@ -9,77 +9,6 @@ import EquipmentList from "../equipment/EquipmentList";
 import Header from "../styled-components/Header";
 import Footer from "../styled-components/Footer";
 
-const PageWrapper = styled.div`
-  min-height: 100vh;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-const ContentWrapper = styled.div`
-  flex-grow: 1;
-  display: flex;
-  justify-content: space-around;
-  font-size: 14px;
-  @media (max-width: 400px) {
-    flex-direction: column;
-    width: 100;
-  }
-
-  button {
-    padding: 10px;
-    margin: 10px 0px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  h2 {
-    font-family: "Swanky and Moo Moo", cursive;
-    font-size: 38px;
-    font-weight: bold;
-  }
-
-  h4 {
-    font-family: "Cousine", monospace;
-  }
-`;
-
-const ProfileStyles = styled.div`
-  flex-basis: 100px;
-  flex: 1;
-  order: 1;
-  text-align: center;
-  margin: 10px;
-`;
-
-const ImageStyles = styled.div`
-  img {
-    width: 75%;
-    margin: auto;
-    border-radius: 15px;
-    padding: 15px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
-      0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-`;
-
-const GigStyles = styled.div`
-  flex-basis: 100px;
-  flex: 1;
-  order: 2;
-  text-align: center;
-  margin: 10px;
-`;
-
-const EquipmentStyles = styled.div`
-  flex-basis: 100px;
-  flex: 1;
-  order: 3;
-  text-align: center;
-  margin: 10px;
-`;
-
 class SingleDrummer extends Component {
   state = {
     drummer: {},
@@ -183,5 +112,77 @@ class SingleDrummer extends Component {
     );
   }
 }
+
+const PageWrapper = styled.div`
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const ContentWrapper = styled.div`
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-around;
+  font-size: 14px;
+  @media (max-width: 400px) {
+    flex-direction: column;
+    width: 100;
+  }
+
+  button {
+    padding: 10px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  h2 {
+    font-family: "Swanky and Moo Moo", cursive;
+    font-size: 38px;
+    font-weight: bold;
+  }
+
+  h4 {
+    font-family: "Cousine", monospace;
+  }
+`;
+
+const ProfileStyles = styled.div`
+  flex-basis: 100px;
+  flex: 1;
+  order: 1;
+  text-align: center;
+  margin: 10px;
+`;
+
+const ImageStyles = styled.div`
+  img {
+    width: 75%;
+    margin: auto;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+`;
+
+const GigStyles = styled.div`
+  flex-basis: 100px;
+  flex: 1;
+  order: 2;
+  text-align: center;
+  margin: 10px;
+`;
+
+const EquipmentStyles = styled.div`
+  flex-basis: 100px;
+  flex: 1;
+  order: 3;
+  text-align: center;
+  margin: 10px;
+`;
+
 
 export default SingleDrummer;
