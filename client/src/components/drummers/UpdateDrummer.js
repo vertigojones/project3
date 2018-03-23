@@ -47,7 +47,6 @@ class UpdateDrummer extends Component {
               name="image"
               value={this.state.drummer.image}
               placeholder={this.props.drummer.image}
-              required
             />
             <label htmlFor="image"></label>
             <div className="after" />
@@ -60,7 +59,6 @@ class UpdateDrummer extends Component {
               name="name"
               value={this.state.drummer.name}
               placeholder={this.props.drummer.name}
-              required
             />
             <label htmlFor="name"></label>
             <div className="after" />
@@ -73,7 +71,6 @@ class UpdateDrummer extends Component {
               name="gender"
               value={this.state.drummer.gender}
               placeholder={this.props.drummer.gender}
-              required
             />
             <label htmlFor="gender"></label>
             <div className="after" />
@@ -86,7 +83,6 @@ class UpdateDrummer extends Component {
               name="age"
               value={this.state.drummer.age}
               placeholder={this.props.drummer.age}
-              required
             />
             <label htmlFor="age"></label>
             <div className="after" />
@@ -99,7 +95,6 @@ class UpdateDrummer extends Component {
               name="location"
               value={this.state.drummer.location}
               placeholder={this.props.drummer.location}
-              required
             />
             <label htmlFor="location"></label>
             <div className="after" />
@@ -112,7 +107,6 @@ class UpdateDrummer extends Component {
               name="instruments"
               value={this.state.drummer.instruments}
               placeholder={this.props.drummer.instruments}
-              required
             />
             <label htmlFor="instruments"></label>
             <div className="after" />
@@ -125,7 +119,6 @@ class UpdateDrummer extends Component {
               name="styles"
               value={this.state.drummer.styles}
               placeholder={this.props.drummer.styles}
-              required
             />
             <label htmlFor="styles"></label>
             <div className="after" />
