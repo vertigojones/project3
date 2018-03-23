@@ -65,7 +65,7 @@ const ContentWrapper = styled.div`
     text-shadow: 2px 2px lightgrey;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 650px) {
     font-size: 18px;
     width: 90vw;
   }
@@ -74,11 +74,19 @@ const ContentWrapper = styled.div`
 const HeaderWrapper = styled.div`
   font-family: "Sedgwick Ave Display", cursive;
   font-size: 64px;
-  text-shadow: 5px 5px lightgrey;
+  text-shadow: 5px 5px white;
   display: block;
+  margin: 10px;
+  border: 5px solid white;
+  border-radius: 15px;
+  background-image: url("https://i.imgur.com/Intt7gp.jpg?2");
 
-  @media (max-width: 400px) {
-    font-size: 38px;
+  h1 {
+    padding: 15px;
+  }
+
+  @media (max-width: 650px) {
+    font-size: 32px;
   }
 `;
 

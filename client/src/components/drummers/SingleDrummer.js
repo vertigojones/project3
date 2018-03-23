@@ -160,7 +160,7 @@ const ProfileStyles = styled.div`
 const ImageStyles = styled.div`
   img {
     width: 75%;
-    margin: auto;
+    margin: 15px;
     border-radius: 15px;
     padding: 15px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
