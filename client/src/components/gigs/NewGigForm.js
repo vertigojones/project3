@@ -34,85 +34,108 @@ class NewGigForm extends Component {
       notes: this.state.notes
     };
     await axios.post(`/api/drummer/${this.props.drummerId}/gigs`, payload);
-    await this.props.getAllGigs();
   };
 
   render() {
     return (
       <StyleWrapper>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <label htmlFor="image">Image URL: </label>
-            <input
-              onChange={this.handleChange}
-              type="text"
-              name="image"
-              value={this.state.image}
-            />
-          </div>
-          <div>
-            <label htmlFor="name">Date: </label>
-            <input
-              onChange={this.handleChange}
-              type="text"
-              name="date"
-              value={this.state.date}
-            />
-          </div>
-          <div>
-            <label htmlFor="gender">Time: </label>
-            <input
-              onChange={this.handleChange}
-              type="text"
-              name="time"
-              value={this.state.time}
-            />
-          </div>
-          <div>
-            <label htmlFor="age">Venue: </label>
-            <input
-              onChange={this.handleChange}
-              type="text"
-              name="venue"
-              value={this.state.venue}
-            />
-          </div>
-          <div>
-            <label htmlFor="location">Location: </label>
-            <input
-              onChange={this.handleChange}
-              type="text"
-              name="location"
-              value={this.state.location}
-            />
-          </div>
-          <div>
-            <label htmlFor="instruments">Artist: </label>
-            <input
-              onChange={this.handleChange}
-              type="text"
-              name="artist"
-              value={this.state.artist}
-            />
-          </div>
-          <div>
-            <label htmlFor="styles">Equipment: </label>
-            <input
-              onChange={this.handleChange}
-              type="text"
-              name="equipment"
-              value={this.state.equipment}
-            />
-          </div>
-          <div>
-            <label htmlFor="styles">Notes: </label>
-            <input
-              onChange={this.handleChange}
-              type="text"
-              name="notes"
-              value={this.state.notes}
-            />
-          </div>
+        <form onSubmit={this.handleSubmit}>        
+            <fieldset>
+              <input
+                onChange={this.handleChange}
+                id="image"
+                type="text"
+                name="image"
+                value={this.state.image}
+                required
+              />
+              <label htmlFor="image">Image URL</label>
+              <div className="after" />
+            </fieldset>                  
+            <fieldset>
+              <input
+                onChange={this.handleChange}
+                id="date"
+                type="text"
+                name="date"
+                value={this.state.date}
+                required
+              />
+              <label htmlFor="date">Date</label>
+              <div className="after" />
+            </fieldset>    
+            <fieldset>
+              <input
+                onChange={this.handleChange}
+                id="time"
+                type="text"
+                name="time"
+                value={this.state.time}
+                required
+              />
+              <label htmlFor="time">Time</label>
+              <div className="after" />
+            </fieldset>    
+            <fieldset>
+              <input
+                onChange={this.handleChange}
+                id="venue"
+                type="text"
+                name="venue"
+                value={this.state.venue}
+                required
+              />
+              <label htmlFor="venue">Venue</label>
+              <div className="after" />
+            </fieldset>    
+            <fieldset>
+              <input
+                onChange={this.handleChange}
+                id="location"
+                type="text"
+                name="location"
+                value={this.state.location}
+                required
+              />
+              <label htmlFor="location">Location</label>
+              <div className="after" />
+            </fieldset>    
+            <fieldset>
+              <input
+                onChange={this.handleChange}
+                id="artist"
+                type="text"
+                name="artist"
+                value={this.state.artist}
+                required
+              />
+              <label htmlFor="artist">Artist</label>
+              <div className="after" />
+            </fieldset>    
+            <fieldset>
+              <input
+                onChange={this.handleChange}
+                id="equipment"
+                type="text"
+                name="equipment"
+                value={this.state.equipment}
+                required
+              />
+              <label htmlFor="equipment">Equipment</label>
+              <div className="after" />
+            </fieldset>    
+            <fieldset>
+              <input
+                onChange={this.handleChange}
+                id="notes"
+                type="text"
+                name="notes"
+                value={this.state.notes}
+                required
+              />
+              <label htmlFor="notes">Notes</label>
+              <div className="after" />
+            </fieldset>    
           <button>Submit</button>
         </form>
       </StyleWrapper>
@@ -122,6 +145,96 @@ class NewGigForm extends Component {
 
 const StyleWrapper = styled.div`
   font-family: "Cousine", monospace;
+  font-size: 20px;
+  form {
+    width: 300px;
+    margin: 20px auto;
+  }
+
+  fieldset {
+    position: relative;
+    border: none;
+  }
+
+  label {
+    position: absolute;
+    top: 18px;
+    color: rgba(0, 0, 0, 0.3);
+    transform-origin: left;
+    transition: all 0.3s ease;
+  }
+
+  input:focus ~ label {
+    color: red;
+  }
+
+  input:focus ~ label,
+  input:valid ~ label {
+    top: 0;
+    transform: scale(0.6, 0.6);
+  }
+
+  input {
+    font-size: 20px;
+    width: 100%;
+    border: none;
+    margin-top: 10px;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  .after {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, red 50%, transparent 50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: all 0.6s ease;
+  }
+
+  input:focus ~ .after {
+    background-position: 0 0;
+  }
+
+  button {
+    position: relative;
+    width: 50%;
+    font-size: 20px;
+    font-family: system-ui, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    margin-top: 20px;
+    padding: 2px 10px;
+    color: rgba(0, 0, 0, 0.4);
+    background: white;
+    border: none;
+    background: linear-gradient(to right, red 50%, transparent 50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: all 0.6s ease;
+  }
+
+  button:before {
+    position: absolute;
+    content: "Submit";
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    display: block;
+    background-color: white;
+  }
+
+  button:active,
+  button:focus,
+  button:hover {
+    outline: none;
+    background-position: 0 0;
+    color: red;
+  }
 `;
 
 export default NewGigForm;

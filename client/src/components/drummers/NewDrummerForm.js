@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import styled from "styled-components";
 
 class NewDrummerForm extends Component {
   state = {
@@ -36,74 +37,191 @@ class NewDrummerForm extends Component {
   };
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div>
-          <label htmlFor="image">Image URL: </label>
-          <input
-            onChange={this.handleChange}
-            type="text"
-            name="image"
-            value={this.state.image}
-          />
-        </div>
-        <div>
-          <label htmlFor="name">Name: </label>
-          <input
-            onChange={this.handleChange}
-            type="text"
-            name="name"
-            value={this.state.name}
-          />
-        </div>
-        <div>
-          <label htmlFor="gender">Gender: </label>
-          <input
-            onChange={this.handleChange}
-            type="text"
-            name="gender"
-            value={this.state.gender}
-          />
-        </div>
-        <div>
-          <label htmlFor="age">Age: </label>
-          <input
-            onChange={this.handleChange}
-            type="text"
-            name="age"
-            value={this.state.age}
-          />
-        </div>
-        <div>
-          <label htmlFor="location">Location: </label>
-          <input
-            onChange={this.handleChange}
-            type="text"
-            name="location"
-            value={this.state.location}
-          />
-        </div>
-        <div>
-          <label htmlFor="instruments">Instruments: </label>
-          <input
-            onChange={this.handleChange}
-            type="text"
-            name="instruments"
-            value={this.state.instruments}
-          />
-        </div>
-        <div>
-          <label htmlFor="styles">Styles: </label>
-          <input
-            onChange={this.handleChange}
-            type="text"
-            name="styles"
-            value={this.state.styles}
-          />
-        </div>
-        <button>Submit</button>
-      </form>
+      <FormWrapper>
+        <form onSubmit={this.handleSubmit}>
+          <fieldset>
+            <input
+              onChange={this.handleChange}
+              id="image"
+              type="text"
+              name="image"
+              value={this.state.image}
+              required
+            />
+            <label htmlFor="image">Image URL</label>
+            <div className="after" />
+          </fieldset>
+          <fieldset>
+            <input
+              onChange={this.handleChange}
+              id="name"
+              type="text"
+              name="name"
+              value={this.state.name}
+              required
+            />
+            <label htmlFor="name">Name</label>
+            <div className="after" />
+          </fieldset>
+          <fieldset>
+            <input
+              onChange={this.handleChange}
+              id="gender"
+              type="text"
+              name="gender"
+              value={this.state.gender}
+              required
+            />
+            <label htmlFor="gender">Gender</label>
+            <div className="after" />
+          </fieldset>
+          <fieldset>
+            <input
+              onChange={this.handleChange}
+              id="age"
+              type="text"
+              name="age"
+              value={this.state.age}
+              required
+            />
+            <label htmlFor="age">Age</label>
+            <div className="after" />
+          </fieldset>
+          <fieldset>
+            <input
+              onChange={this.handleChange}
+              id="location"
+              type="text"
+              name="location"
+              value={this.state.location}
+              required
+            />
+            <label htmlFor="location">Location</label>
+            <div className="after" />
+          </fieldset>
+          <fieldset>
+            <input
+              onChange={this.handleChange}
+              id="instruments"
+              type="text"
+              name="instruments"
+              value={this.state.instruments}
+              required
+            />
+            <label htmlFor="instruments">Instruments</label>
+            <div className="after" />
+          </fieldset>
+          <fieldset>
+            <input
+              onChange={this.handleChange}
+              id="styles"
+              type="text"
+              name="styles"
+              value={this.state.styles}
+              required
+            />
+            <label htmlFor="styles">Styles</label>
+            <div className="after" />
+          </fieldset>
+          <button>Submit</button>
+        </form>
+      </FormWrapper>
     );
   }
 }
+
+const FormWrapper = styled.div`
+  font-family: "Cousine", monospace;
+  font-size: 20px;
+  form {
+    width: 300px;
+    margin: 20px auto;
+  }
+
+  fieldset {
+    position: relative;
+    border: none;
+  }
+
+  label {
+    position: absolute;
+    top: 18px;
+    color: rgba(0, 0, 0, 0.3);
+    transform-origin: left;
+    transition: all 0.3s ease;
+  }
+
+  input:focus ~ label {
+    color: red;
+  }
+
+  input:focus ~ label,
+  input:valid ~ label {
+    top: 0;
+    transform: scale(0.6, 0.6);
+  }
+
+  input {
+    font-size: 20px;
+    width: 100%;
+    border: none;
+    margin-top: 10px;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  .after {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, red 50%, transparent 50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: all 0.6s ease;
+  }
+
+  input:focus ~ .after {
+    background-position: 0 0;
+  }
+
+  button {
+    position: relative;
+    width: 50%;
+    font-size: 20px;
+    font-family: system-ui, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    margin-top: 20px;
+    padding: 2px 10px;
+    color: rgba(0, 0, 0, 0.4);
+    background: white;
+    border: none;
+    background: linear-gradient(to right, red 50%, transparent 50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: all 0.6s ease;
+  }
+
+  button:before {
+    position: absolute;
+    content: "Submit";
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    display: block;
+    background-color: white;
+  }
+
+  button:active,
+  button:focus,
+  button:hover {
+    outline: none;
+    background-position: 0 0;
+    color: red;
+  }
+`;
 
 export default NewDrummerForm;
