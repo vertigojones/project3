@@ -20,6 +20,7 @@ class GigList extends Component {
             getAllGigs={this.props.getAllGigs}
             gigList={this.props.gigList}
             drummerId={this.props.drummerId}
+            toggleShowNewForm={this.toggleShowNewForm}
           />
         ) : null}
         <hr />
@@ -30,6 +31,7 @@ class GigList extends Component {
               gigs={gigs}
               gigId={this._id}
               drummerId={this.props.drummerId}
+              
             />
           );
         })}

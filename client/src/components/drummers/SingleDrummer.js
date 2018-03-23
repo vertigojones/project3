@@ -36,6 +36,11 @@ class SingleDrummer extends Component {
     this.setState({ equipmentList: res.data.gigs });
   };
 
+  getAllDrummers = async () => {
+    const res = await axios.get("/api/drummer");
+    this.setState({ drummers: res.data });
+  };
+
   getAllGigs = async () => {
     const drummerId = this.state.drummer._id
     const res = await axios.get(`/api/drummer/${drummerId}`);
@@ -47,7 +52,9 @@ class SingleDrummer extends Component {
     this.setState({ redirect: true });
     axios
       .delete(`/api/drummer/${drummerId}`)
-      .then(res => {})
+      .then(res => {}).then(() => {
+        this.getAllDrummers()
+      })
       .catch(err => {
         console.log(err);
       });
@@ -94,6 +101,7 @@ class SingleDrummer extends Component {
                 <GigList
                   gigList={this.state.gigList}
                   drummerId={this.state.drummer._id}
+                  getAllGigs={this.getAllGigs}
                 />
               </div>
             </GigStyles>
@@ -126,7 +134,7 @@ const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   font-size: 14px;
-  @media (max-width: 400px) {
+  @media (max-width: 420px) {
     flex-direction: column;
     width: 100;
   }

@@ -33,110 +33,115 @@ class NewGigForm extends Component {
       equipment: this.state.equipment,
       notes: this.state.notes
     };
-    await axios.post(`/api/drummer/${this.props.drummerId}/gigs`, payload);
+    try {
+      await axios.post(`/api/drummer/${this.props.drummerId}/gigs`, payload);
+      await this.props.getAllGigs();
+    //   await this.props.toggleShowNewForm();
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   render() {
     return (
       <StyleWrapper>
-        <form onSubmit={this.handleSubmit}>        
-            <fieldset>
-              <input
-                onChange={this.handleChange}
-                id="image"
-                type="text"
-                name="image"
-                value={this.state.image}
-                required
-              />
-              <label htmlFor="image">Image URL</label>
-              <div className="after" />
-            </fieldset>                  
-            <fieldset>
-              <input
-                onChange={this.handleChange}
-                id="date"
-                type="text"
-                name="date"
-                value={this.state.date}
-                required
-              />
-              <label htmlFor="date">Date</label>
-              <div className="after" />
-            </fieldset>    
-            <fieldset>
-              <input
-                onChange={this.handleChange}
-                id="time"
-                type="text"
-                name="time"
-                value={this.state.time}
-                required
-              />
-              <label htmlFor="time">Time</label>
-              <div className="after" />
-            </fieldset>    
-            <fieldset>
-              <input
-                onChange={this.handleChange}
-                id="venue"
-                type="text"
-                name="venue"
-                value={this.state.venue}
-                required
-              />
-              <label htmlFor="venue">Venue</label>
-              <div className="after" />
-            </fieldset>    
-            <fieldset>
-              <input
-                onChange={this.handleChange}
-                id="location"
-                type="text"
-                name="location"
-                value={this.state.location}
-                required
-              />
-              <label htmlFor="location">Location</label>
-              <div className="after" />
-            </fieldset>    
-            <fieldset>
-              <input
-                onChange={this.handleChange}
-                id="artist"
-                type="text"
-                name="artist"
-                value={this.state.artist}
-                required
-              />
-              <label htmlFor="artist">Artist</label>
-              <div className="after" />
-            </fieldset>    
-            <fieldset>
-              <input
-                onChange={this.handleChange}
-                id="equipment"
-                type="text"
-                name="equipment"
-                value={this.state.equipment}
-                required
-              />
-              <label htmlFor="equipment">Equipment</label>
-              <div className="after" />
-            </fieldset>    
-            <fieldset>
-              <input
-                onChange={this.handleChange}
-                id="notes"
-                type="text"
-                name="notes"
-                value={this.state.notes}
-                required
-              />
-              <label htmlFor="notes">Notes</label>
-              <div className="after" />
-            </fieldset>    
-          <button>Submit</button>
+        <form onSubmit={this.handleSubmit}>
+          <fieldset>
+            <input
+              onChange={this.handleChange}
+              id="image"
+              type="text"
+              name="image"
+              value={this.state.image}
+              required
+            />
+            <label htmlFor="image">Image URL</label>
+            <div className="after" />
+          </fieldset>
+          <fieldset>
+            <input
+              onChange={this.handleChange}
+              id="date"
+              type="text"
+              name="date"
+              value={this.state.date}
+              required
+            />
+            <label htmlFor="date">Date</label>
+            <div className="after" />
+          </fieldset>
+          <fieldset>
+            <input
+              onChange={this.handleChange}
+              id="time"
+              type="text"
+              name="time"
+              value={this.state.time}
+              required
+            />
+            <label htmlFor="time">Time</label>
+            <div className="after" />
+          </fieldset>
+          <fieldset>
+            <input
+              onChange={this.handleChange}
+              id="venue"
+              type="text"
+              name="venue"
+              value={this.state.venue}
+              required
+            />
+            <label htmlFor="venue">Venue</label>
+            <div className="after" />
+          </fieldset>
+          <fieldset>
+            <input
+              onChange={this.handleChange}
+              id="location"
+              type="text"
+              name="location"
+              value={this.state.location}
+              required
+            />
+            <label htmlFor="location">Location</label>
+            <div className="after" />
+          </fieldset>
+          <fieldset>
+            <input
+              onChange={this.handleChange}
+              id="artist"
+              type="text"
+              name="artist"
+              value={this.state.artist}
+              required
+            />
+            <label htmlFor="artist">Artist</label>
+            <div className="after" />
+          </fieldset>
+          <fieldset>
+            <input
+              onChange={this.handleChange}
+              id="equipment"
+              type="text"
+              name="equipment"
+              value={this.state.equipment}
+            />
+            <label htmlFor="equipment">Equipment</label>
+            <div className="after" />
+          </fieldset>
+          <fieldset>
+            <input
+              onChange={this.handleChange}
+              id="notes"
+              type="text"
+              name="notes"
+              value={this.state.notes}
+              required
+            />
+            <label htmlFor="notes">Notes</label>
+            <div className="after" />
+          </fieldset>
+          <button onClick={this.props.toggleShowNewForm}>Submit</button>
         </form>
       </StyleWrapper>
     );

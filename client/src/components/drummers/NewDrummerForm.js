@@ -185,6 +185,7 @@ const FormWrapper = styled.div`
   input:focus ~ .after {
     background-position: 0 0;
   }
+
 `;
 
 export default NewDrummerForm;
