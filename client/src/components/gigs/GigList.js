@@ -17,6 +17,7 @@ class GigList extends Component {
         <button onClick={this.toggleShowNewForm}>Create New Gig</button>
         {this.state.showNewForm ? (
           <NewGigForm
+            getAllGigs={this.props.getAllGigs}
             gigList={this.props.gigList}
             drummerId={this.props.drummerId}
           />

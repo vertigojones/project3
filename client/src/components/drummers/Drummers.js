@@ -10,6 +10,7 @@ class Drummers extends Component {
     drummers: [],
     showNewForm: false
   };
+
   componentWillMount() {
     this.getAllDrummers();
   }
