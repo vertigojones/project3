@@ -80,6 +80,10 @@ const HeaderWrapper = styled.div`
   border: 5px solid white;
   border-radius: 15px;
   background-image: url("https://i.imgur.com/Intt7gp.jpg?2");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 
   h1 {
     padding: 15px;
