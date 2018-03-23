@@ -7,7 +7,9 @@ class Header extends Component {
     return (
       <HeaderStyles>
         <h1>Drummers' Checklist</h1>
-        <Link to="/">All Drummers</Link>
+        <Link style={{ textDecoration: "none" }} to="/">
+          All Drummers
+        </Link>
       </HeaderStyles>
     );
   }

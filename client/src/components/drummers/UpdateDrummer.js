@@ -17,7 +17,15 @@ class UpdateDrummer extends Component {
   componentDidMount() {
     const drummer = this.props;
     this.setState({ drummer: drummer });
+    this.refreshDrummer();
   }
+
+  refreshDrummer = () => {
+    axios.get("/api/drummer").then(res => {
+      const update = res.data;
+      this.setState({ update });
+    });
+  };
 
   editDrummer = event => {
     event.preventDefault();
@@ -31,6 +39,9 @@ class UpdateDrummer extends Component {
       })
       .catch(err => {
         console.log(err);
+      })
+      .then(() => {
+        this.props.refreshDrummer();
       });
   };
 
