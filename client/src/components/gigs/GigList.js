@@ -30,8 +30,7 @@ class GigList extends Component {
               key={i}
               gigs={gigs}
               gigId={this._id}
-              drummerId={this.props.drummerId}
-              
+              drummerId={this.props.drummerId}            
             />
           );
         })}

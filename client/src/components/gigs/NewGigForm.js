@@ -36,7 +36,7 @@ class NewGigForm extends Component {
     try {
       await axios.post(`/api/drummer/${this.props.drummerId}/gigs`, payload);
       await this.props.getAllGigs();
-    //   await this.props.toggleShowNewForm();
+      await this.props.toggleShowNewForm();
     } catch (err) {
       console.log(err);
     }
@@ -141,7 +141,7 @@ class NewGigForm extends Component {
             <label htmlFor="notes">Notes</label>
             <div className="after" />
           </fieldset>
-          <button onClick={this.props.toggleShowNewForm}>Submit</button>
+          <button>Submit</button>
         </form>
       </StyleWrapper>
     );
