@@ -48,21 +48,18 @@ class Drummers extends Component {
 
 const ContentWrapper = styled.div`
   height: 100vh;
-  display: flex;
   text-align: center;
   font-family: "Cousine", monospace;
   font-size: 24px;
-  text-shadow: 2px 2px white;
-  background-image: url("https://i.imgur.com/Intt7gp.jpg?1");
-  background-position: absolute;
-  background-size: cover;
-  width: 100vw; 
+  h3 {
+    text-shadow: 2px 2px lightgrey;
+  }
 `;
 
 const HeaderWrapper = styled.div`
   font-family: "Sedgwick Ave Display", cursive;
   font-size: 64px;
-  text-shadow: 5px 5px white;
+  text-shadow: 5px 5px lightgrey;
   text-align: center;
 `;
 
