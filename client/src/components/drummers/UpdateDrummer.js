@@ -17,15 +17,7 @@ class UpdateDrummer extends Component {
   componentDidMount() {
     const drummer = this.props;
     this.setState({ drummer: drummer });
-    this.getAllGigs();
   }
-
-  getAllGigs = () => {
-    axios.get(`/api/drummer/${this.props.drummerId}`).then(res => {
-      const update = res.data;
-      this.setState({ update });
-    });
-  };
 
   editDrummer = event => {
     event.preventDefault();
@@ -41,7 +33,8 @@ class UpdateDrummer extends Component {
         console.log(err);
       })
       .then(() => {
-        this.props.getAllGigs();
+        this.props.getSingleDrummer();
+        this.props.toggleShowUpdate();
       });
   };
 
@@ -50,90 +43,90 @@ class UpdateDrummer extends Component {
       <FormStyles>
         <div>
           <form onSubmit={this.editDrummer}>
-          <fieldset>
-            <input
-              onChange={this.handleChange}
-              id="image"
-              type="text"
-              name="image"
-              value={this.state.drummer.image}
-              placeholder={this.props.drummer.image}
-            />
-            <label htmlFor="image"></label>
-            <div className="after" />
-          </fieldset>         
-          <fieldset>
-            <input
-              onChange={this.handleChange}
-              id="name"
-              type="text"
-              name="name"
-              value={this.state.drummer.name}
-              placeholder={this.props.drummer.name}
-            />
-            <label htmlFor="name"></label>
-            <div className="after" />
-          </fieldset>
-          <fieldset>
-            <input
-              onChange={this.handleChange}
-              id="gender"
-              type="text"
-              name="gender"
-              value={this.state.drummer.gender}
-              placeholder={this.props.drummer.gender}
-            />
-            <label htmlFor="gender"></label>
-            <div className="after" />
-          </fieldset>
-          <fieldset>
-            <input
-              onChange={this.handleChange}
-              id="age"
-              type="text"
-              name="age"
-              value={this.state.drummer.age}
-              placeholder={this.props.drummer.age}
-            />
-            <label htmlFor="age"></label>
-            <div className="after" />
-          </fieldset>
-          <fieldset>
-            <input
-              onChange={this.handleChange}
-              id="location"
-              type="text"
-              name="location"
-              value={this.state.drummer.location}
-              placeholder={this.props.drummer.location}
-            />
-            <label htmlFor="location"></label>
-            <div className="after" />
-          </fieldset>
-          <fieldset>
-            <input
-              onChange={this.handleChange}
-              id="instruments"
-              type="text"
-              name="instruments"
-              value={this.state.drummer.instruments}
-              placeholder={this.props.drummer.instruments}
-            />
-            <label htmlFor="instruments"></label>
-            <div className="after" />
-          </fieldset>
-          <fieldset>
-            <input
-              onChange={this.handleChange}
-              id="styles"
-              type="text"
-              name="styles"
-              value={this.state.drummer.styles}
-              placeholder={this.props.drummer.styles}
-            />
-            <label htmlFor="styles"></label>
-            <div className="after" />
-          </fieldset>
+            <fieldset>
+              <input
+                onChange={this.handleChange}
+                id="image"
+                type="text"
+                name="image"
+                value={this.state.drummer.image}
+                placeholder={this.props.drummer.image}
+              />
+              <label htmlFor="image" />
+              <div className="after" />
+            </fieldset>
+            <fieldset>
+              <input
+                onChange={this.handleChange}
+                id="name"
+                type="text"
+                name="name"
+                value={this.state.drummer.name}
+                placeholder={this.props.drummer.name}
+              />
+              <label htmlFor="name" />
+              <div className="after" />
+            </fieldset>
+            <fieldset>
+              <input
+                onChange={this.handleChange}
+                id="gender"
+                type="text"
+                name="gender"
+                value={this.state.drummer.gender}
+                placeholder={this.props.drummer.gender}
+              />
+              <label htmlFor="gender" />
+              <div className="after" />
+            </fieldset>
+            <fieldset>
+              <input
+                onChange={this.handleChange}
+                id="age"
+                type="text"
+                name="age"
+                value={this.state.drummer.age}
+                placeholder={this.props.drummer.age}
+              />
+              <label htmlFor="age" />
+              <div className="after" />
+            </fieldset>
+            <fieldset>
+              <input
+                onChange={this.handleChange}
+                id="location"
+                type="text"
+                name="location"
+                value={this.state.drummer.location}
+                placeholder={this.props.drummer.location}
+              />
+              <label htmlFor="location" />
+              <div className="after" />
+            </fieldset>
+            <fieldset>
+              <input
+                onChange={this.handleChange}
+                id="instruments"
+                type="text"
+                name="instruments"
+                value={this.state.drummer.instruments}
+                placeholder={this.props.drummer.instruments}
+              />
+              <label htmlFor="instruments" />
+              <div className="after" />
+            </fieldset>
+            <fieldset>
+              <input
+                onChange={this.handleChange}
+                id="styles"
+                type="text"
+                name="styles"
+                value={this.state.drummer.styles}
+                placeholder={this.props.drummer.styles}
+              />
+              <label htmlFor="styles" />
+              <div className="after" />
+            </fieldset>
             <div>
               <button>Update</button>
             </div>

@@ -125,6 +125,7 @@ class NewGigForm extends Component {
               type="text"
               name="equipment"
               value={this.state.equipment}
+              required
             />
             <label htmlFor="equipment">Equipment</label>
             <div className="after" />

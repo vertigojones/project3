@@ -42,7 +42,7 @@ class SingleDrummer extends Component {
   };
 
   getAllGigs = async () => {
-    const drummerId = this.state.drummer._id
+    const drummerId = this.state.drummer._id;
     const res = await axios.get(`/api/drummer/${drummerId}`);
     this.setState({ gigList: res.data.gigs });
   };
@@ -52,8 +52,9 @@ class SingleDrummer extends Component {
     this.setState({ redirect: true });
     axios
       .delete(`/api/drummer/${drummerId}`)
-      .then(res => {}).then(() => {
-        this.getAllDrummers()
+      .then(res => {})
+      .then(() => {
+        this.getAllDrummers();
       })
       .catch(err => {
         console.log(err);
@@ -89,7 +90,11 @@ class SingleDrummer extends Component {
                     Update {this.state.drummer.name}
                   </button>
                   {this.state.updateDrummer ? (
-                    <UpdateDrummer drummer={this.state.drummer} />
+                    <UpdateDrummer
+                      drummer={this.state.drummer}
+                      toggleShowUpdate={this.toggleShowUpdate}
+                      getSingleDrummer={this.getSingleDrummer}
+                    />
                   ) : null}
                   <hr />
                 </div>
@@ -107,7 +112,7 @@ class SingleDrummer extends Component {
             </GigStyles>
             <EquipmentStyles>
               <div className="equipment-wrapper">
-                <h2>Equipment</h2>
+                <h2>Equipment List</h2>
                 <button>Create New Equipment</button>
                 <hr />
                 <EquipmentList equipmentList={this.state.equipmentList} />
@@ -191,6 +196,5 @@ const EquipmentStyles = styled.div`
   text-align: center;
   margin: 10px;
 `;
-
 
 export default SingleDrummer;
