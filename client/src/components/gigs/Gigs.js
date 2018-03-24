@@ -15,9 +15,17 @@ class Gigs extends Component {
     const drummerId = this.props.drummerId;
     const gigId = this.props.gigs._id;
     console.log(gigId);
-    axios.delete(`/api/drummer/${drummerId}/gigs/${gigId}`).then(res => {
-      this.setState({ gigs: res.data.gigs });
-    });
+    axios
+      .delete(`/api/drummer/${drummerId}/gigs/${gigId}`)
+      .then(res => {
+        this.setState({ gigs: res.data.gigs });
+      })
+      .catch(err => {
+        console.log(err);
+      })
+      .then(() => {
+        this.props.getSingleDrummer();
+      });
   };
 
   render() {

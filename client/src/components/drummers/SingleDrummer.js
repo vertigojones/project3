@@ -107,6 +107,7 @@ class SingleDrummer extends Component {
                   gigList={this.state.gigList}
                   drummerId={this.state.drummer._id}
                   getAllGigs={this.getAllGigs}
+                  getSingleDrummer={this.getSingleDrummer}
                 />
               </div>
             </GigStyles>

@@ -4,8 +4,7 @@ import styled from "styled-components";
 
 class UpdateDrummer extends Component {
   state = {
-    drummer: {},
-    updatedDrummer: {}
+    drummer: {}
   };
 
   handleChange = event => {
