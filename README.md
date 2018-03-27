@@ -16,16 +16,21 @@ I have designed a web application for drummers to keep track of their equipment 
 
 __Still to fix/bugs:__
 - Full CRUD on second and third models. 
-- Styling on landing page.
-- Full responsiveness.
-- Better look to forms popping up.
-- Fully working on Heroku.
+- Better connection between Gigs and Equipment models (maybe even make them independent of each other).
 
 ---
 
 __Version 2.0:__
 - User secure log in on landing page.
-- Better connection between Gigs and Equipment models.
-- Create radio buttons for adding equipment in gigs column.
+- Second popup (question) for delete actions.
 - Expand to be inclusive of other instruments (except bass players).
-- Add notes to gigs.
+- Sort gigs by date (chronologically).
+
+---
+
+__Refernces__
+- GA Bog App.
+- GA Ideas App.
+- Stack Overflow.
+- Google.
+- Codepen (for form).

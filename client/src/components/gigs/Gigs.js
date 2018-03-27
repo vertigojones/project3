@@ -1,9 +1,18 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import EquipmentName from "./EquipmentName";
+import UpdateGig from "./UpdateGig";
 import axios from "axios";
 
 class Gigs extends Component {
+  state = {
+    updateCurrentGig: false
+  };
+
+  toggleShowUpdate = () => {
+    this.setState({ updateCurrentGig: !this.state.updateCurrentGig });
+  };
+
   createNewGig = () => {
     const drummerId = this.props.drummerId;
     axios.post(`/api/drummer/${drummerId}/gigs`).then(res => {
@@ -49,6 +58,15 @@ class Gigs extends Component {
         <button onClick={this.toggleShowUpdate}>
           Update {this.props.gigs.venue}
         </button>
+        {this.state.updateCurrentGig ? (
+          <UpdateGig
+            gigs={this.props.gigs}
+            gigId={this.props.gigId}
+            drummerId={this.props.drummerId}
+            toggleShowUpdate={this.toggleShowUpdate}
+            getSingleDrummer={this.props.getSingleDrummer}
+          />
+        ) : null}
         <hr />
       </div>
     );

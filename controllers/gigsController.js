@@ -38,6 +38,34 @@ router.post("/", (req, res) => {
     })
     .then(savedDrummer => {
       res.send(savedDrummer);
+    })
+    .catch(err => {
+      console.log(err);
+      res.json(err);
+    });
+});
+
+// update gig
+router.patch("/:id", (req, res) => {
+  Drummers.findById(req.params.drummerId)
+    .then(drummer => {
+      const gigs = drummer.gigs.id(req.params.id);
+        gigs.image = req.body.image,
+        gigs.date = req.body.date,
+        gigs.time = req.body.time,
+        gigs.venue = req.body.venue,
+        gigs.location = req.body.location,
+        gigs.artist = req.body.artist,
+        // gigs.equipment = req.body.equipment,
+        gigs.notes = req.body.notes
+      return drummer.save();
+    })
+    .then(savedDrummer => {
+      res.send(savedDrummer);
+    })
+    .catch(err => {
+      console.log(err);
+      res.json(err);
     });
 });
 

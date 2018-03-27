@@ -101,7 +101,8 @@ const congas = new Equipment({
 
 // set up the gigs
 const mbs = new Gigs({
-  image: "https://mma.prnewswire.com/media/565379/NovaCopy.jpg?w=800",
+  image:
+    "https://thumbor.forbes.com/thumbor/960x0/smart/https%3A%2F%2Fblogs-images.forbes.com%2Fkeithflamer%2Ffiles%2F2017%2F08%2FMercedes-Benz-Stadium.jpg",
   date: "03-18-2018",
   time: "8:00",
   venue: "Mercedes-Benz Stadium",
