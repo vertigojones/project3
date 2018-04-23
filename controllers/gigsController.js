@@ -46,19 +46,31 @@ router.post("/", (req, res) => {
 });
 
 // update gig
-router.patch("/:id", (req, res) => {
+router.put("/:id", (req, res) => {
   Drummers.findById(req.params.drummerId)
     .then(drummer => {
       const gigs = drummer.gigs.id(req.params.id);
-        gigs.image = req.body.image,
-        gigs.date = req.body.date,
-        gigs.time = req.body.time,
-        gigs.venue = req.body.venue,
-        gigs.location = req.body.location,
-        gigs.artist = req.body.artist,
-        // gigs.equipment = req.body.equipment,
-        gigs.notes = req.body.notes
-      return drummer.save();
+      if (req.body.image) {
+        gigs.image = req.body.image;
+      }
+      if (req.body.date) {
+        gigs.date = req.body.date;
+      }
+      if (req.body.time) {
+        gigs.time = req.body.time;
+      }
+      if (req.body.venue) {
+        gigs.venue = req.body.venue;
+      }
+      if (req.body.location) {
+        gigs.location = req.body.location;
+      }
+      if (req.body.artist) {
+        gigs.artist = req.body.artist;
+      }
+      if (req.body.notes) {
+        gigs.notes = req.body.notes;
+      }
     })
     .then(savedDrummer => {
       res.send(savedDrummer);
@@ -67,6 +79,22 @@ router.patch("/:id", (req, res) => {
       console.log(err);
       res.json(err);
     });
+});
+
+router.put("/:id", async (req, res) => {
+  try {
+    const gigId = req.params.id;
+    const updatedGig = req.body;
+    const savedDrummer = await Drummers.findOneAndUpdate(
+      drummerId,
+      updatedDrummer,
+      { new: true }
+    );
+    res.json(savedDrummer);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 // delete gig

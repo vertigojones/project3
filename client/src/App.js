@@ -9,6 +9,7 @@ injectGlobal`
 @import url('https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display');
 @import url('https://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo');
 @import url('https://fonts.googleapis.com/css?family=Cousine');
+@import url('https://fonts.googleapis.com/css?family=Gaegu');
 
 button {
   padding: 10px;

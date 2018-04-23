@@ -17,6 +17,7 @@ I have designed a web application for drummers to keep track of their equipment 
 __Still to fix/bugs:__
 - Full CRUD on second and third models. 
 - Better connection between Gigs and Equipment models (maybe even make them independent of each other).
+- Refactor the code!
 
 ---
 

@@ -31,6 +31,20 @@ class Drummers extends Component {
           <HeaderWrapper>
             <h1>Drummers' Checklist</h1>
           </HeaderWrapper>
+          <TextWrapper>
+            <p>
+              Drummers' Checklist is an online tool for drummers to keep track
+              of their upcoming shows, plus the equipment they need. This is a
+              one-stop page for all your drumming needs! Just list all your
+              upcoming shows into the gig calendar, then enter the percussion
+              setups you have to offer. Also, Drummers' Checklist can function
+              as a profile page for potential clients to check over your details
+              - they can also select which setup they want for their show if
+              they decide to hire you! To join, simply create a new profile,
+              then start adding your equipment setups and shows. Feel free to
+              share your details with your drumming friends. Happy drumming!
+            </p>
+          </TextWrapper>
           {this.state.drummers.map(drummer => (
             <Link
               key={drummer._id}
@@ -71,10 +85,20 @@ const ContentWrapper = styled.div`
   }
 `;
 
+const TextWrapper = styled.div`
+  display: flex;
+  margin: 0 auto;
+  font-family: "Gaegu", cursive;
+  font-size: 24px;
+  font-weight: bold;
+  width: 80%;
+`;
+
 const HeaderWrapper = styled.div`
   font-family: "Sedgwick Ave Display", cursive;
   font-size: 64px;
-  text-shadow: 5px 5px white;
+  color: white;
+  text-shadow: 5px 5px black;
   display: block;
   margin: 10px;
   border: 5px solid white;
