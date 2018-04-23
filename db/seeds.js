@@ -182,6 +182,7 @@ const murph = new Drummer({
   location: "Atlanta",
   instruments: ["Drums, Bongos, Triangle"],
   styles: ["Electronic, Rock, Pop, Serbian Folk"],
+  profile: "Hi, I'm Murph and I tear this thing up. Drums, that is. I can play anything. All I need is a good meat-filled breakfast and I'm good to go for the rest of the day. I like to drum. Drums is my life. Did I say that I like drums? Hire me. You won't be disappointed.",
   gigs: [eddiesAttic, tabernacle, symphony]
 });
 
@@ -194,6 +195,7 @@ const cameron = new Drummer({
   location: "The Village",
   instruments: ["Drums, Percussion, Washboard"],
   styles: ["Hardcore, Screamo, Latin, Easy Listening"],
+  profile: "I have been playing for five years now, mostly in the Atlanta area. My styles range across the board, as I love all kinds of music. My clients so far have included Metallica (when Lars needs a break), Queen, The King, Jay-Z, OutKast, The Transiberian Orchestra, Grease: The Musical, and The Nutcracker. If you need a versatlie musician for your group or act, then look no further than this guy!",
   gigs: [mbs, fourSeasons, fortyWatt]
 });
 

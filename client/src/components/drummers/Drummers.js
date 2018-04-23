@@ -45,6 +45,7 @@ class Drummers extends Component {
               share your details with your drumming friends. Happy drumming!
             </p>
           </TextWrapper>
+          <hr />
           {this.state.drummers.map(drummer => (
             <Link
               key={drummer._id}
@@ -74,6 +75,10 @@ const ContentWrapper = styled.div`
   font-family: "Cousine", monospace;
   font-size: 24px;
   text-decoration: none;
+
+  hr {
+    width: 80%;
+  }
 
   h3 {
     text-shadow: 2px 2px lightgrey;

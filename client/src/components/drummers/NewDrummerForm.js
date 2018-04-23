@@ -123,6 +123,18 @@ class NewDrummerForm extends Component {
             <label htmlFor="styles">Styles</label>
             <div className="after" />
           </fieldset>
+          <fieldset>
+            <input
+              onChange={this.handleChange}
+              id="profile"
+              type="text"
+              name="profile"
+              value={this.state.profile}
+              required
+            />
+            <label htmlFor="profile">Profile</label>
+            <div className="after" />
+          </fieldset>
           <button>Submit</button>
         </form>
       </FormWrapper>

@@ -86,6 +86,7 @@ class SingleDrummer extends Component {
                   <h4>Location: {this.state.drummer.location}</h4>
                   <h4>Instruments: {this.state.drummer.instruments}</h4>
                   <h4>Styles: {this.state.drummer.styles}</h4>
+                  <h4>Profile: {this.state.drummer.profile}</h4>
                   <button onClick={this.toggleShowUpdate}>
                     Update {this.state.drummer.name}
                   </button>

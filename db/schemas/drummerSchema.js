@@ -12,6 +12,7 @@ const drummerSchema = new Schema({
   location: String,
   instruments: [],
   styles: [],
+  profile: String,
   gigs: [gigSchema]
 });
 

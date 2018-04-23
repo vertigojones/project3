@@ -126,6 +126,18 @@ class UpdateDrummer extends Component {
               <label htmlFor="styles" />
               <div className="after" />
             </fieldset>
+            <fieldset>
+              <input
+                onChange={this.handleChange}
+                id="profile"
+                type="text"
+                name="profile"
+                value={this.state.drummer.profile}
+                placeholder={this.props.drummer.profile}
+              />
+              <label htmlFor="profile" />
+              <div className="after" />
+            </fieldset>
             <div>
               <button>Update</button>
             </div>
